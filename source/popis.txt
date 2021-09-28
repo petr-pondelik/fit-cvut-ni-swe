@@ -5,7 +5,6 @@ Zdroj: European Centre for Disease Prevention and Control
 URL: https://data.europa.eu/data/datasets/hospital-and-icu-admission-rates-and-occupancy-for-covid-19?locale=en
 Formát: CSV
 
-
 Popis dle zdroje:
 	These data files contain information about hospitalisation and Intensive Care Unit (ICU) admission rates and current occupancy for COVID-19 by date and country.
 
