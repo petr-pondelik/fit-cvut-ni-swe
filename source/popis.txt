@@ -34,7 +34,6 @@ URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%
 Formát: CSV
 
 
-
 ## 3) Číselník okresů
 Zdroj: Ministerstvo zdravotnictví
 URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttps---opendata.mzcr.cz-api-3-action-package_show-id-ciselnik-okresu
