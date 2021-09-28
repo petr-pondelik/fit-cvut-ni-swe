@@ -1,0 +1,41 @@
+# Popis zvolených datasetů
+
+## 1) CovidEU: Denní obsazenost nemocnic a jednotek intenzivní péče dle země a data
+Zdroj: European Centre for Disease Prevention and Control
+URL: https://data.europa.eu/data/datasets/hospital-and-icu-admission-rates-and-occupancy-for-covid-19?locale=en
+Formát: CSV
+
+
+Popis dle zdroje:
+	These data files contain information about hospitalisation and Intensive Care Unit (ICU) admission rates and current occupancy for COVID-19 by date and country.
+
+
+## 2) WH: World Hapiness pro rok 2019 dle zemí
+Zdroj: World Happiness Report
+URL: https://www.kaggle.com/mathurinache/world-happiness-report?select=2019.csv
+Formát: CSV
+
+Popis dle zdroje:
+	The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy their citizens perceive themselves to be.
+
+
+## 3) CovidCZE: Denní kumulativní statistiky pro ČR dle okresů
+Zdroj: Národní zdravotnický informační systém, Krajské hygienické stanice, Ministerstvo zdravotnictví ČR
+URL: https://onemocneni-aktualne.mzcr.cz/api/v2/covid-19/kraj-okres-nakazeni-vyleceni-umrti.csv
+Formát: CSV
+
+Popis dle zdroje:
+	Datová sada podle krajů a okresů ČR obsahující kumulativní denní počty osob s prokázaným onemocněním COVID-19 dle validovaných hlášení krajských hygienických stanic, kumulativní denní počty vyléčených po onemocnění COVID-19 dle hlášení krajských hygienických stanic a kumulativní denní počty úmrtí v souvislosti s onemocněním COVID-19 dle hlášení krajských hygienických stanic a hospitalizačních úmrtí.
+
+
+## 3) Číselník krajů
+Zdroj: Ministerstvo zdravotnictví
+URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttps---opendata.mzcr.cz-api-3-action-package_show-id-ciselnik-kraju
+Formát: CSV
+
+
+
+## 3) Číselník okresů
+Zdroj: Ministerstvo zdravotnictví
+URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttps---opendata.mzcr.cz-api-3-action-package_show-id-ciselnik-okresu
+Formát: CSV
