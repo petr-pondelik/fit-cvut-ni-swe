@@ -1,0 +1,37 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+
+@prefix wh:  <http://www.example.org/world-happiness> .
+@prefix wh2019Obs:  <http://www.example.org/world-happiness/2019/observations/> .
+@prefix whMeasures: <http://www.example.org/world-happiness/measures/> .
+
+# TODO: Change this dataset for this dataset https://ourworldindata.org/happiness-and-life-satisfaction
+
+<http://www.example.org/regions/Finland> a dbo:location ;
+        wh:country-or-region-name-en "Finland"@en .
+
+<http://www.example.org/regions/Denmark> a dbo:location ;
+        wh:country-or-region-name-en "Denmark"@en .
+
+wh2019Obs:Finland a qb:Observation ;
+        wh:region <http://www.example.org/regions/Finland> ;
+        whMeasures:overall-rank 1 ;
+        whMeasures:score 7.769 ;
+        whMeasures:gdp-per-capita 1.34 ;
+        whMeasures:social-support 1.587 ;
+        whMeasures:healthy-life-expectancy 0.986 ;
+        whMeasures:freedom-to-make-life-choices 0.596 ;
+        whMeasures:generosity 0.153 ;
+        whMeasures:perceptions-of-corruption 0.393 .
+
+
+wh2019Obs:Denmark a qb:Observation ;
+        wh:region <http://www.example.org/regions/Denmark> ;
+        whMeasures:overall-rank 2 ;
+        whMeasures:score 7.6 ;
+        whMeasures:gdp-per-capita 1.383 ;
+        whMeasures:social-support 1.573 ;
+        whMeasures:healthy-life-expectancy 0.986 ;
+        whMeasures:freedom-to-make-life-choices 0.592 ;
+        whMeasures:generosity 0.252 ;
+        whMeasures:perceptions-of-corruption 0.41 .

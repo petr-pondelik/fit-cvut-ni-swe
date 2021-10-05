@@ -1,0 +1,19 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: http://purl.org/dc/terms/ .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+
+@prefix eg: <http://www.example.org/> .
+@prefix covid-indicators: <http://www.example.org/covid/indicators/> .
+@prefix covid-sources: <http://www.example.org/covid/sources/> .
+
+
+<http://www.example.org/countries/Finland/covid/2020-08-28> a qb:Observation ;
+		eg:country <http://www.example.org/countries/Finland> ;
+		schema:dateCreated "2020-08-28"^^xsd:date ;
+		TODO:TODO "2020-W35" ; # TODO
+		TODO:TODO covid-indicators:daily-hospital-occupancy ;
+		TODO:TODO 11 ;
+		TODO:TODO covid:sources:External_Github ;
+
+# TODO: value nepatří k Ukazateli, ale k záznamu !!!
+# TODO: url nepatří ke Zdroji informace, ale k záznamu !!! Zdroj informace je TYP ZDROJE
