@@ -14,15 +14,15 @@ Popis dle zdroje:
 	These data files contain information about hospitalisation and Intensive Care Unit (ICU) admission rates and current occupancy for COVID-19 by date and country.
 
 
-## 2) WH: World Happiness Report
-Zdroj: World Happiness Report
-URL: https://www.kaggle.com/mathurinache/world-happiness-report?select=2019.csv
+## 2) LS: Life Satisfiction
+Zdroj: Gallup World Poll surveys
+URL: https://ourworldindata.org/grapher/happiness-cantril-ladder
 Formát: CSV
 
-Dataset obsahuje hodnoty atributů World Hapiness pro rok 2019 dle jednotlivých zemí.
+Dataset obsahuje hodnoty životní spokojenosti obyvatel jednotlivých zemích (získaných metodou Cantril Ladder) v jednotlivých letech.
 
 Popis dle zdroje:
-	The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy their citizens perceive themselves to be.
+	Average of survey responses to the 'Cantril Ladder' question in the Gallup World Poll. The survey question asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0.
 
 
 ## 3) CovidCZE: Přehled epidemiologické situace dle hlášení krajských hygienických stanic podle okresu
