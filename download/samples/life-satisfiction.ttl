@@ -1,37 +1,66 @@
-@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix schema: <http://schema.org/> .
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 
-@prefix wh:  <http://www.example.org/world-happiness> .
-@prefix wh2019Obs:  <http://www.example.org/world-happiness/2019/observations/> .
-@prefix whMeasures: <http://www.example.org/world-happiness/measures/> .
 
-# TODO: Change this dataset for this dataset https://ourworldindata.org/happiness-and-life-satisfaction
-
-<http://www.example.org/regions/Finland> a dbo:location ;
-        wh:country-or-region-name-en "Finland"@en .
-
-<http://www.example.org/regions/Denmark> a dbo:location ;
-        wh:country-or-region-name-en "Denmark"@en .
-
-wh2019Obs:Finland a qb:Observation ;
-        wh:region <http://www.example.org/regions/Finland> ;
-        whMeasures:overall-rank 1 ;
-        whMeasures:score 7.769 ;
-        whMeasures:gdp-per-capita 1.34 ;
-        whMeasures:social-support 1.587 ;
-        whMeasures:healthy-life-expectancy 0.986 ;
-        whMeasures:freedom-to-make-life-choices 0.596 ;
-        whMeasures:generosity 0.153 ;
-        whMeasures:perceptions-of-corruption 0.393 .
+@prefix eg: <http://www.example.org/> .
+@prefix ls:  <http://www.example.org/life-satisfaction/> .
+@prefix ls-countries: <http://www.example.org/life-satisfaction/countries/> .
+@prefix ls-measures: <http://www.example.org/life-satisfaction/measures/> .
 
 
-wh2019Obs:Denmark a qb:Observation ;
-        wh:region <http://www.example.org/regions/Denmark> ;
-        whMeasures:overall-rank 2 ;
-        whMeasures:score 7.6 ;
-        whMeasures:gdp-per-capita 1.383 ;
-        whMeasures:social-support 1.573 ;
-        whMeasures:healthy-life-expectancy 0.986 ;
-        whMeasures:freedom-to-make-life-choices 0.592 ;
-        whMeasures:generosity 0.252 ;
-        whMeasures:perceptions-of-corruption 0.41 .
+# Define country dimension and it's range
+eg:refCountry a qb:DimensionProperty ;
+    rdfs:label  "Country data cube dimension."@en ;
+    rdfs:range  schema:Country .
+
+# Define year dimension and it's range
+eg:refYear a qb:DimensionProperty ;
+    rdfs:label  "Year data cube dimension."@en ;
+    rdfs:range  xsd:gYear .
+
+# Define happiness-cantril-ladder measure and it's range
+ls-measures:happiness-cantril-ladder a qb:MeasureProperty ;
+    rdfs:label  "Life satisfaction by Cantril Ladder happiness."@en ;
+    rdfs:range  xsd:double .
+
+
+eg:dsd-ls a qb:DataStructureDefinition ;
+    # The dimensions
+    qb:component [ qb:dimension eg:refCountry; qb:order 1 ] ;
+    qb:component [ qb:dimension eg:refYear; qb:order 2 ] ;
+
+    # The measure(s)
+    qb:component [ qb:measure ls-measures:happiness-cantril-ladder ] .
+
+
+# Publisher can be linked (https://www.w3.org/TR/vocab-data-cube/#metadata)
+eg:ds-ls a qb:DataSet ;
+    rdfs:label      "Self-reported Life Satisfaction"@en ;
+    rdfs:comment    "Self-reported Life Satisfaction dataset, 2005 to 2020."@en ;
+    qb:structure    eg:dsd-ls .
+
+
+<http://www.example.org/life-satisfaction/countries/Finland> a schema:Country ;
+        schema:name         "Finland"@en ;
+        schema:identifier   "FIN" .
+
+
+<http://www.example.org/life-satisfaction/countries/Denmark> a schema:Country ;
+        schema:name         "Denmark"@en ;
+        schema:identifier   "DNK" .
+
+
+ <http://www.example.org/life-satisfaction/countries/Finland/2019> a qb:Observation ;
+        qb:dataSet                              eg:ds-ls ;
+        eg:refCountry                           ls-countries:Finland ;
+        eg:refYear                              "2019"^^xsd:gYear ;
+        ls-measures:happiness-cantril-ladder    7.78 .
+
+
+<http://www.example.org/life-satisfaction/countries/Denmark/2019> a qb:Observation ;
+        qb:dataSet                              eg:ds-ls ;
+        eg:refCountry                           ls-countries:Denmark ;
+        eg:refYear                              "2019"^^xsd:gYear ;
+        ls-measures:happiness-cantril-ladder    7.693 .
