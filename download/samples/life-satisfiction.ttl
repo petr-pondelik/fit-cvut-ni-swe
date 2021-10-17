@@ -2,6 +2,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
 @prefix schema: <http://schema.org/> .
 @prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
 
 
 @prefix eg: <http://www.example.org/> .
@@ -10,21 +11,33 @@
 @prefix ls-measures: <http://www.example.org/life-satisfaction/measures/> .
 
 
+###################################################
+#   DataCube dimensions definition
+###################################################
+
 # Define country dimension and it's range
 eg:refCountry a qb:DimensionProperty ;
     rdfs:label  "Country data cube dimension."@en ;
-    rdfs:range  schema:Country .
+    rdfs:range  skos:Concept .
 
 # Define year dimension and it's range
 eg:refYear a qb:DimensionProperty ;
     rdfs:label  "Year data cube dimension."@en ;
     rdfs:range  xsd:gYear .
 
+###################################################
+#   DataCube measures definition
+###################################################
+
 # Define happiness-cantril-ladder measure and it's range
-ls-measures:happiness-cantril-ladder a qb:MeasureProperty ;
+ls-measures:happiness-cantril-ladder a rdf:Property, qb:MeasureProperty ;
     rdfs:label  "Life satisfaction by Cantril Ladder happiness."@en ;
     rdfs:range  xsd:double .
 
+
+###################################################
+#   DataCube DataSet definition
+###################################################
 
 eg:dsd-ls a qb:DataStructureDefinition ;
     # The dimensions
@@ -42,25 +55,41 @@ eg:ds-ls a qb:DataSet ;
     qb:structure    eg:dsd-ls .
 
 
-<http://www.example.org/life-satisfaction/countries/Finland> a schema:Country ;
-        schema:name         "Finland"@en ;
-        schema:identifier   "FIN" .
+###################################################
+#   Countries concepts definition
+###################################################
+
+<http://www.example.org/life-satisfaction/countries/Finland> a skos:Concept ;
+        dbp:name            "Finland"@en ;
+        dbp:iso3166code     "FIN" .
 
 
-<http://www.example.org/life-satisfaction/countries/Denmark> a schema:Country ;
-        schema:name         "Denmark"@en ;
-        schema:identifier   "DNK" .
+<http://www.example.org/life-satisfaction/countries/Denmark> a skos:Concept ;
+        dbp:name            "Denmark"@en ;
+        dbp:iso3166code     "DNK" .
 
 
- <http://www.example.org/life-satisfaction/countries/Finland/2019> a qb:Observation ;
+###################################################
+#   Samples definition
+###################################################
+
+# Sample 1
+<http://www.example.org/life-satisfaction/countries/Finland/2019> a qb:Observation ;
         qb:dataSet                              eg:ds-ls ;
         eg:refCountry                           ls-countries:Finland ;
         eg:refYear                              "2019"^^xsd:gYear ;
         ls-measures:happiness-cantril-ladder    7.78 .
 
-
+# Sample 2
 <http://www.example.org/life-satisfaction/countries/Denmark/2019> a qb:Observation ;
         qb:dataSet                              eg:ds-ls ;
         eg:refCountry                           ls-countries:Denmark ;
         eg:refYear                              "2019"^^xsd:gYear ;
         ls-measures:happiness-cantril-ladder    7.693 .
+
+# Sample 3
+<http://www.example.org/life-satisfaction/countries/Denmark/2019> a qb:Observation ;
+        qb:dataSet                              eg:ds-ls ;
+        eg:refCountry                           ls-countries:Denmark ;
+        eg:refYear                              "2020"^^xsd:gYear ;
+        ls-measures:happiness-cantril-ladder    7.515 .

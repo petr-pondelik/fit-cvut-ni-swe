@@ -1,0 +1,136 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+@prefix eg: <http://www.example.org/> .
+@prefix covid-world: <http://www.example.org/covid-world/> .
+@prefix cwi: <http://www.example.org/covid-world/indicators/> .
+@prefix cw-countries: <http://www.example.org/covid-world/countries/> .
+@prefix cw-continents: <http://www.example.org/covid-world/continents/> .
+
+
+###################################################
+#	DataCube dimensions definition
+###################################################
+
+# Date dimension definition and range
+eg:refDate a qb:DimensionProperty ;
+    rdfs:label  "Date data cube dimension."@en ;
+    rdfs:range  xsd:date .
+
+
+###################################################
+#	DataCube measures definition
+###################################################
+
+cwi:comulative-positive a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Comulative number of positive cases until the given date."@en ;
+	rdfs:range xsd:integer .
+
+cwi:cumulative-deceased a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Cumulative number of deceased until the given date."@en ;
+	rdfs:range xsd:integer .
+
+cwi:cumulative-recovered a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Cumulative number of recovered people until the given date."@en ;
+	rdfs:range xsd:integer .
+
+cwi:currently-positive a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Current number of positive cases by the given date."@en ;
+	rdfs:range xsd:integer .
+
+
+cwi:hospitalized a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Number of hospitalized by the given date."@en ;
+	rdfs:range xsd:integer .
+
+cwi:intensive-care a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Number of hospitalized on the intensive care unit by the given date."@en ;
+	rdfs:range xsd:integer .
+
+
+###################################################
+#	DataCube DataSet definition
+###################################################
+
+
+# DataSet structure definition
+eg:dsd-covid-world a qb:DataStructureDefinition ;
+	# The dimensions
+	qb:component [ qb:dimension eg:refCountry; qb:order 1 ] ;
+	qb:component [ qb:dimension eg:refDate; qb:order 2 ] ;
+
+	# The measures
+	qb:component [ qb:measure cwi:comulative-positive ] ;
+	qb:component [ qb:measure cwi:cumulative-deceased ] ;
+	qb:component [ qb:measure cwi:cumulative-recovered ] ;
+	qb:component [ qb:measure cwi:currently-positive ] ;
+	qb:component [ qb:measure cwi:hospitalized ] ;	
+	qb:component [ qb:measure cwi:intensive-care ] .
+
+eg:ds-covid-world a qb:DataSet ;
+	rdfs:label		"Covid-19 measures around the world."@en ;
+	rdfs:comment	"Dataset containing Covid-19 measures around the world organized by country and by date."@en ;
+	qb:structure 	eg:dsd-covid-world .
+
+
+###################################################
+#	Countries and continents concepts definition
+###################################################
+
+<http://www.example.org/covid-world/countinents/EU/> a skos:Concept ;
+	rdfs:label	"EU"@en .
+
+
+<http://www.example.org/covid-world/countries/DNK/> a skos:Concept ;
+	qbp:name					"Denmark"@en ;
+	qbp:iso3166code				"DNK" ;
+	dbp:nuts					"DK" ;
+	dbp:lat 					56.155403 ;
+	dbp:lon 					11.617223 ;
+	covid-world:eu-country		"true"^^xsd:boolean ;
+	covid-world:eucpm-country  	"true"^^xsd:boolean ;
+	skos:broader				cw-continents:eu .
+
+
+###################################################
+#	Samples definition
+###################################################
+
+# Sample 1 TODO
+<http://www.example.org/covid-world/countries/DNK/covid/2020-08-28> a qb:Observation ;
+		qb:dataSet 					eg:ds-covid-world ;
+		eg:refCountry 				cw-countries:DNK ;
+		eg:refDate 					"2020-08-28"^^xsd:date ;
+		cwi:comulative-positive		16700 ;
+		cwi:cumulative-deceased		624 ;
+		cwi:cumulative-recovered	??? TODO ??? ;
+		cwi:currently-positive		16076 ;
+		cwi:hospitalized			??? TODO ??? ;
+		cwi:intensive-care			??? TODO ??? .
+
+
+# Sample 2
+<http://www.example.org/covid-world/countries/DNK/covid/2020-08-28> a qb:Observation ;
+		qb:dataSet 					eg:ds-covid-world ;
+		eg:refCountry 				cw-countries:DNK ;
+		eg:refDate 					"2021-03-05"^^xsd:date ;
+		cwi:comulative-positive		213932 ;	
+		cwi:cumulative-deceased		2377 ;
+		cwi:cumulative-recovered	204483 ;
+		cwi:currently-positive		7072 ;
+		cwi:hospitalized			215 ;
+		cwi:intensive-care			31 .
+
+
+# Sample 3
+<http://www.example.org/covid-world/countries/DNK/covid/2020-08-28> a qb:Observation ;
+		qb:dataSet 					eg:ds-covid-world ;
+		eg:refCountry 				cw-countries:DNK ;
+		eg:refDate 					"2021-10-01"^^xsd:date ;
+		cwi:comulative-positive		359237 ;	
+		cwi:cumulative-deceased		2659 ;
+		cwi:cumulative-recovered	351407 ;
+		cwi:currently-positive		5171 ;
+		cwi:hospitalized			83 ;
+		cwi:intensive-care			0 .

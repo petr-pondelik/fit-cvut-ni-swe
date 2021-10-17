@@ -3,15 +3,16 @@
 Každý dataset je označen ve formátu "PridelenaZkratka: Původní název".
 
 
-## 1) CovidEU: Hospital and ICU admission rates and occupancy for COVID-19
-Zdroj: European Centre for Disease Prevention and Control
-URL: https://data.europa.eu/data/datasets/hospital-and-icu-admission-rates-and-occupancy-for-covid-19?locale=en
+## 1) CovidWorld: Covid Data around the world
+Zdroj: European Commission, Joint Research Centre (JRC)
+URL: https://data.europa.eu/data/datasets/covid-data-around-the-world?locale=en
+(Zdrojový soubor: https://github.com/ec-jrc/COVID-19/blob/master/data-of-world/jrc-covid-19-all-days-of-world.csv)
 Formát: CSV
 
-Dataset obsahuje informace o denní obsazenosti nemocnic a jednotek intenzivní péče (ICU) dle data a země. Dále také informace o týdenních množství nových hospitalizovaných v nemocnicích a na jednotkách intenzivní péče.
+Dataset obsahuje informace o denních kumulativních statistickách (pozitivní, zemřelí, vyléčení, hospitalizovaní, hospitalizovaní na jednotce intenzivní péče) pandemie Covid-19 ve světě.
 
 Popis dle zdroje:
-	These data files contain information about hospitalisation and Intensive Care Unit (ICU) admission rates and current occupancy for COVID-19 by date and country.
+	Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC
 
 
 ## 2) LS: Life Satisfiction

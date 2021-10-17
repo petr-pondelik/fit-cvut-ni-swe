@@ -1,0 +1,67 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+
+@prefix eg: <http://www.example.org/> .
+@prefix covid-cze: <http://www.example.org/covid-cze/> .
+@prefix cczi: <http://www.example.org/covid-cze/indicators/> .
+
+
+###################################################
+#	DataCube dimensions definition
+###################################################
+
+# Kraj dimension definition and range
+eg:refKraj a qb:DimensionProperty ;
+    rdfs:label  "Dimenze kraje pro DataCube."@cs ;
+    rdfs:range  skos:Concept .
+
+# Okres dimension definition and range
+eg:refOkres a qb:DimensionProperty ;
+    rdfs:label  "Dimenze okresu pro DataCube."@cs ;
+    rdfs:range  skos:Concept .
+
+
+###################################################
+#	DataCube measures definition
+###################################################
+
+cczi:kumulativni-pocet-nakazenych a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Kumulativní počet nakažených do příslušného data."@cs ;
+	rdfs:range xsd:integer .
+
+cczi:kumulativni-pocet-vylecenych a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Kumulativní počet vyléčených do příslušného data."@cs ;
+	rdfs:range xsd:integer .
+
+cczi:kumulativni-pocet-umrti a rdf:Property, qb:MeasureProperty ;
+	rdfs:label "Kumulativní počet zemřelých do příslušného data."@cs ;
+	rdfs:range xsd:integer .
+
+
+###################################################
+#	DataCube DataSet definition
+###################################################
+
+# DataSet structure definition
+eg:dsd-covid-world a qb:DataStructureDefinition ;
+	# The dimensions
+	qb:component [ qb:dimension eg:refKraj; qb:order 1 ] ;
+	qb:component [ qb:dimension eg:refOkres; qb:order 2 ] ;
+	qb:component [ qb:dimension eg:refDate; qb:order 3 ] ;
+	# The measures(s)
+	qb:component [ qb:measure czi:kumulativni-pocet-nakazenych ] ;
+	qb:component [ qb:measure cczi:kumulativni-pocet-vylecenych ] ;
+	qb:component [ qb:measure cczi:kumulativni-pocet-umrti ] .
+
+
+###################################################
+#	Kraje a okresy concepts definition
+###################################################
+
+TODO
+
+###################################################
+#	Samples definition
+###################################################
+
+TODO
