@@ -1,0 +1,23 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+
+
+###################################################
+#	Okresy concepts definition
+###################################################
+
+# Sample 1
+<http://www.example.org/okresy/CZ0202> a skos:Concept ;
+	dbp:nuts	'CZ0202' ;
+	dbp:name	'Beroun'@cs .
+
+# Sample 2
+<http://www.example.org/okresy/CZ020A> a skos:Concept ;
+	dbp:nuts	'CZ020A' ;
+	dbp:name	'Praha-západ'@cs .
+
+# Sample 3
+<http://www.example.org/okresy/CZ0324> a skos:Concept ;
+	dbp:nuts	'CZ0324' ;
+	dbp:name	'Plzeň-jih'@cs .

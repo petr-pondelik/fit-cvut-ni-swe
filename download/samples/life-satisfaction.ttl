@@ -1,58 +1,13 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
-@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix dbp:  <http://dbpedia.org/property/> .
 
 
 @prefix eg: <http://www.example.org/> .
-@prefix ls:  <http://www.example.org/life-satisfaction/> .
 @prefix ls-countries: <http://www.example.org/life-satisfaction/countries/> .
 @prefix ls-measures: <http://www.example.org/life-satisfaction/measures/> .
 
-
-###################################################
-#   DataCube dimensions definition
-###################################################
-
-# Define country dimension and it's range
-eg:refCountry a qb:DimensionProperty ;
-    rdfs:label  "Country data cube dimension."@en ;
-    rdfs:range  skos:Concept .
-
-# Define year dimension and it's range
-eg:refYear a qb:DimensionProperty ;
-    rdfs:label  "Year data cube dimension."@en ;
-    rdfs:range  xsd:gYear .
-
-###################################################
-#   DataCube measures definition
-###################################################
-
-# Define happiness-cantril-ladder measure and it's range
-ls-measures:happiness-cantril-ladder a rdf:Property, qb:MeasureProperty ;
-    rdfs:label  "Life satisfaction by Cantril Ladder happiness."@en ;
-    rdfs:range  xsd:double .
-
-
-###################################################
-#   DataCube DataSet definition
-###################################################
-
-eg:dsd-ls a qb:DataStructureDefinition ;
-    # The dimensions
-    qb:component [ qb:dimension eg:refCountry; qb:order 1 ] ;
-    qb:component [ qb:dimension eg:refYear; qb:order 2 ] ;
-
-    # The measure(s)
-    qb:component [ qb:measure ls-measures:happiness-cantril-ladder ] .
-
-
-# Publisher can be linked (https://www.w3.org/TR/vocab-data-cube/#metadata)
-eg:ds-ls a qb:DataSet ;
-    rdfs:label      "Self-reported Life Satisfaction"@en ;
-    rdfs:comment    "Self-reported Life Satisfaction dataset, 2005 to 2020."@en ;
-    qb:structure    eg:dsd-ls .
 
 
 ###################################################
