@@ -7,17 +7,19 @@
 #	Okresy concepts definition
 ###################################################
 
+# TODO: Explore options for LAU predicate
+
 # Sample 1
 <http://www.example.org/okresy/CZ0202> a skos:Concept ;
-	dbp:nuts	'CZ0202' ;
-	dbp:name	'Beroun'@cs .
+	dbp:nuts			'CZ0202' ; # or https://linked.opendata.cz/resource/domain/mfcr/monitor/ciselniky/Nuts ???
+	skos:prefLabel 		'Beroun'@cs . # or dbp:name ???
 
 # Sample 2
 <http://www.example.org/okresy/CZ020A> a skos:Concept ;
-	dbp:nuts	'CZ020A' ;
-	dbp:name	'Praha-západ'@cs .
+	dbp:nuts			'CZ020A' ;
+	skos:prefLabel		'Praha-západ'@cs .
 
 # Sample 3
 <http://www.example.org/okresy/CZ0324> a skos:Concept ;
-	dbp:nuts	'CZ0324' ;
-	dbp:name	'Plzeň-jih'@cs .
+	dbp:nuts			'CZ0324' ;
+	skos:prefLabel		'Plzeň-jih'@cs .

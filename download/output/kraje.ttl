@@ -1,0 +1,83 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://www.example.org/ciselniky/kraje/CZ000>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ000" ;
+        skos:prefLabel  "ČR (kromě bezdomovců, cizinců, neevidovaných)"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ001>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ001" ;
+        skos:prefLabel  "ČR (včetně bezdomovců, cizinců, neevidovaných)"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ010>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ010" ;
+        skos:prefLabel  "Hlavní město Praha"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ020>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ020" ;
+        skos:prefLabel  "Středočeský kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ031>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ031" ;
+        skos:prefLabel  "Jihočeský kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ032>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ032" ;
+        skos:prefLabel  "Plzeňský kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ041>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ041" ;
+        skos:prefLabel  "Karlovarský kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ042>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ042" ;
+        skos:prefLabel  "Ústecký kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ051>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ051" ;
+        skos:prefLabel  "Liberecký kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ052>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ052" ;
+        skos:prefLabel  "Královéhradecký kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ053>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ053" ;
+        skos:prefLabel  "Pardubický kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ063>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ063" ;
+        skos:prefLabel  "Kraj Vysočina"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ064>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ064" ;
+        skos:prefLabel  "Jihomoravský kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ071>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ071" ;
+        skos:prefLabel  "Olomoucký kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ072>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ072" ;
+        skos:prefLabel  "Zlínský kraj"@cs .
+
+<http://www.example.org/ciselniky/kraje/CZ080>
+        rdf:type        skos:Concept ;
+        dbp:nuts        "CZ080" ;
+        skos:prefLabel  "Moravskoslezský kraj"@cs .

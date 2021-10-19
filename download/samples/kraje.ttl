@@ -10,14 +10,14 @@
 # Sample 1
 <http://www.example.org/kraje/CZ010> a skos:Concept ;
 	dbp:nuts	'CZ010' ;
-	dbp:name	'Hlavní město Praha'@cs .
+	skos:prefLabel	'Hlavní město Praha'@cs .
 
 # Sample 2
 <http://www.example.org/kraje/CZ020> a skos:Concept ;
 	dbp:nuts	'CZ020' ;
-	dbp:name	'Středočeský kraj'@cs .
+	skos:prefLabel	'Středočeský kraj'@cs .
 
 # Sample 3
 <http://www.example.org/kraje/CZ032> a skos:Concept ;
 	dbp:nuts	'CZ032' ;
-	dbp:name	'Plzeňský kraj'@cs .
+	skos:prefLabel	'Plzeňský kraj'@cs .

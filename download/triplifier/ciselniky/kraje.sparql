@@ -1,0 +1,15 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dbp:  <http://dbpedia.org/property/>
+
+CONSTRUCT {
+    ?kraj a skos:Concept ;
+        dbp:nuts            ?krajNuts ;
+        skos:prefLabel      ?krajName .
+}
+FROM <file:./../../data/kraje.csv>
+WHERE {
+    BIND (IRI(CONCAT('http://www.example.org/ciselniky/kraje/', ?kod_polozky)) AS ?kraj)
+    BIND (?kod_polozky AS ?krajNuts)
+    BIND (STRLANG(?nazev_polozky, "cs") AS ?krajName)
+}
+OFFSET 1
