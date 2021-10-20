@@ -37,13 +37,13 @@ Popis dle zdroje:
 	Datová sada podle krajů a okresů ČR obsahující kumulativní denní počty osob s prokázaným onemocněním COVID-19 dle validovaných hlášení krajských hygienických stanic, kumulativní denní počty vyléčených po onemocnění COVID-19 dle hlášení krajských hygienických stanic a kumulativní denní počty úmrtí v souvislosti s onemocněním COVID-19 dle hlášení krajských hygienických stanic a hospitalizačních úmrtí.
 
 
-## 3) CK: Číselník krajů
+## 4) Číselníky
+### Kraje
 Zdroj: Ministerstvo zdravotnictví
 URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttps---opendata.mzcr.cz-api-3-action-package_show-id-ciselnik-kraju
 Formát: CSV
 
-
-## 3) CO: Číselník okresů
+### Okresy
 Zdroj: Ministerstvo zdravotnictví
 URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttps---opendata.mzcr.cz-api-3-action-package_show-id-ciselnik-okresu
 Formát: CSV

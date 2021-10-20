@@ -1,0 +1,76 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+@prefix voc: <http://www.example.org/vocabulary/> .
+@prefix ccz-voc: <http://www.example.org/covid-cze/vocabulary/> .
+@prefix ccz-kraje: <http://www.example.org/covid-cze/kraje/> .
+@prefix ccz-okresy: <http://www.example.org/covid-cze/okresy/> .
+
+
+
+###################################################
+#   DataCube DataSet definition
+###################################################
+
+# DataSet structure definition
+ccz-voc:dataset-definition a qb:DataStructureDefinition ;
+    # The dimensions
+    qb:component [ qb:dimension voc:refKraj; qb:order 1 ] ;
+    qb:component [ qb:dimension voc:refOkres; qb:order 2 ] ;
+    qb:component [ qb:dimension voc:refDate; qb:order 3 ] ;
+    # The measures(s)
+    qb:component [ qb:measure ccz-voc:kumulativni-pocet-nakazenych ] ;
+    qb:component [ qb:measure ccz-voc:kumulativni-pocet-vylecenych ] ;
+    qb:component [ qb:measure ccz-voc:kumulativni-pocet-umrti ] .
+
+ccz-voc:dataset a qb:DataSet ;
+    rdfs:label          "Statistiky pandemie Covid-19 v ČR."@cs ;
+    rdfs:comment        "Datová sada obsahuje denní kumulativní statistiky pandemie COVID-19 pro ČR dle okresů."@cs ;
+    qb:structure        ccz-voc:dataset-definition .
+
+
+###################################################
+#	Kraje a okresy concepts definition
+###################################################
+
+<http://www.example.org/covid-cze/kraje/CZ020> a skos:Concept ;
+	dbp:nuts		'CZ020' .
+
+<http://www.example.org/covid-cze/okresy/CZ0201> a skos:Concept ;
+	dbp:nuts		'CZ0201' ;
+	skos:broader	ccz-kraje:CZ020 .
+
+
+###################################################
+#	Samples definition
+###################################################
+
+# Sample 1
+<http://www.example.org/covid-cze/okresy/CZ0201/2020-12-10> a qb:Observation ;
+	qb:dataSet 								    ccz-voc:dataset ;
+	voc:refKraj								    ccz-kraje:CZ020 ;
+	voc:refOkres								ccz-kraje:CZ0201 ;
+	ccz-voc:kumulativni-pocet-nakazenych		6985 ;
+	ccz-voc:kumulativni-pocet-vylecenych		6391 ;
+	ccz-voc:kumulativni-pocet-umrti			    143 .
+
+# Sample 2
+<http://www.example.org/covid-cze/okresy/CZ0201/2021-05-13> a qb:Observation ;
+	qb:dataSet 								    ccz-voc:dataset ;
+	voc:refKraj								    ccz-kraje:CZ020 ;
+	voc:refOkres								ccz-okresy:CZ0201 ;
+	ccz-voc:kumulativni-pocet-nakazenych		18538 ;
+	ccz-voc:kumulativni-pocet-vylecenych		18221 ;
+	ccz-voc:kumulativni-pocet-umrti			    365 .
+
+# Sample 3
+<http://www.example.org/covid-cze/okresy/CZ0201/2021-09-21> a qb:Observation ;
+	qb:dataSet 								    ccz-voc:dataset ;
+	voc:refKraj								    ccz-kraje:CZ020 ;
+	voc:refOkres								ccz-okresy:CZ0201 ;
+	ccz-voc:kumulativni-pocet-nakazenych		18814 ;
+	ccz-voc:kumulativni-pocet-vylecenych		18612 ;
+	ccz-voc:kumulativni-pocet-umrti			    369 .

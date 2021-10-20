@@ -1,0 +1,67 @@
+# Popis IRI patternů
+
+Veškeré zdroje jsou organizovány na abstraktní doméně http://www.example.org
+
+## Třídy a predikáty
+* existují 4 kategorie slovníků
+* první slovník je společný
+    * dostupný pod prefixem vocabulary/ na IRI http://www.example.org/vocabulary/
+* zbývající 3 slovníky jsou organizovány pomocí prefixů příslušných datasetům a dále prefixu vocabulary/
+    * http://www.example.org/life-satisfaction/vocabulary/
+    * http://www.example.org/covid-world/vocabulary/
+    * http://www.example.org/covid-cze/vocabulary/
+
+## Instance dat z datasetů
+
+### Číselníky
+
+Číselníky krajů a okresů jsou hierarchicky organizovány pod prefixem ciselniky/
+* číselník krajů: http://www.example.org/ciselniky/kraje/
+    * příklad: http://www.example.org/ciselniky/kraje/CZ020
+* číselník okresů: http://www.example.org/ciselniky/okresy/
+    * příklad: http://www.example.org/ciselniky/okresy/CZ0324
+
+### Life Satisfaction
+
+Dataset je dostupný pod prefixem life-satisfaction/
+
+Obsahuje instance zemí a pozorování.
+
+Země jsou dostupné pod prefixem countries/
+* http://www.example.org/life-satisfaction/countries
+    * příklad: http://www.example.org/life-satisfaction/countries/Finland
+
+Pozorování jsou organizovány dle země a roku pod IRI příslušné země.
+* příklad: http://www.example.org/life-satisfaction/countries/Finland/2019
+
+### Covid World
+
+Dataset je dostupný pod prefixem covid-world/
+
+Obsahuje instance kontinentů, zemí a pozorování.
+
+Kontinenty jsou dostupné pod prefixem continents/
+* http://www.example.org/covid-world/continents/
+    * příklad: http://www.example.org/covid-world/continents/EU
+
+Země jsou dostupné pod prefixem countries/
+* http://www.example.org/covid-world/countries/
+    * příklad: http://www.example.org/covid-world/countries/DNK
+
+Pozorování jsou organizována pod konkrétními zeměmi dle data:
+* http://www.example.org/covid-world/countries/DNK/2020-08-28
+
+### Covid CZE
+
+Obsahuje instance krajů, okresů a pozorování.
+
+Kraje jsou dostupné pod prefixem kraje/
+* http://www.example.org/covid-cze/kraje/
+    * příklad: http://www.example.org/covid-cze/kraje/CZ020
+
+Okresy jsou dostupné pod prefixem okresy/
+* http://www.example.org/covid-cze/okresy/
+    * příklad: <http://www.example.org/covid-cze/okresy/CZ0201
+
+Pozorování jsou organizována dle země a data pod IRI příslušeného okresu.
+* příklad: http://www.example.org/covid-cze/okresy/CZ0201/2021-05-13

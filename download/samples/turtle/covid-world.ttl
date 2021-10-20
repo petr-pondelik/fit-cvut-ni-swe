@@ -1,0 +1,93 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+@prefix eg: <http://www.example.org/> .
+@prefix cw-countries: <http://www.example.org/covid-world/countries/> .
+@prefix cw-continents: <http://www.example.org/covid-world/continents/> .
+@prefix voc: <http://www.example.org/vocabulary/> .
+@prefix cw-voc: <http://www.example.org/covid-world/vocabulary/> .
+
+
+
+###################################################
+#   DataCube DataSet definition
+###################################################
+
+
+# DataSet structure definition
+cw-voc:dataset-definition a qb:DataStructureDefinition ;
+    # The dimensions
+    qb:component [ qb:dimension voc:refCountry; qb:order 1 ] ;
+    qb:component [ qb:dimension voc:refDate; qb:order 2 ] ;
+
+    # The measures
+    qb:component [ qb:measure cw-voc:comulative-positive ] ;
+    qb:component [ qb:measure cw-voc:cumulative-deceased ] ;
+    qb:component [ qb:measure cw-voc:cumulative-recovered ] ;
+    qb:component [ qb:measure cw-voc:currently-positive ] ;
+    qb:component [ qb:measure cw-voc:hospitalized ] ;
+    qb:component [ qb:measure cw-voc:intensive-care ] .
+
+cw-voc:dataset a qb:DataSet ;
+    rdfs:label      "Covid-19 measures around the world."@en ;
+    rdfs:comment    "Dataset containing Covid-19 measures around the world organized by country and by date."@en ;
+    qb:structure    cw-voc:dsd-covid-world .
+
+
+###################################################
+#	Countries and continents concepts definition
+###################################################
+
+<http://www.example.org/covid-world/continents/EU> a skos:Concept ;
+	rdfs:label	"EU"@en .
+
+<http://www.example.org/covid-world/countries/DNK> a skos:Concept ;
+	dbp:name					"Denmark"@en ;
+	dbp:iso3166code				"DNK" ;
+	dbp:nuts					"DK" ;
+	dbp:lat 					56.155403 ;
+	dbp:lon 					11.617223 ;
+	voc:eu-country				"true"^^xsd:boolean ;
+	voc:eucpm-country  			"true"^^xsd:boolean ;
+	skos:broader				cw-continents:eu .
+
+
+###################################################
+#	Samples definition
+###################################################
+
+# Sample 1
+<http://www.example.org/covid-world/countries/DNK/2020-08-28> a qb:Observation ;
+		qb:dataSet 					        cw-voc:dataset ;
+		voc:refCountry 			            cw-countries:DNK ;
+		voc:refDate 				        "2020-08-28"^^xsd:date ;
+		cw-voc:cumulative-positive		    16700 ;
+		cw-voc:cumulative-deceased		    624 ;
+		cw-voc:currently-positive		    16076 .
+
+# Sample 2
+<http://www.example.org/covid-world/countries/DNK/2020-08-28> a qb:Observation ;
+		qb:dataSet 					        cw-voc:dataset ;
+		voc:refCountry 				        cw-countries:DNK ;
+		voc:refDate 					    "2021-03-05"^^xsd:date ;
+		cw-voc:cumulative-positive		    213932 ;
+		cw-voc:cumulative-deceased		    2377 ;
+		cw-voc:cumulative-recovered	        204483 ;
+		cw-voc:currently-positive		    7072 ;
+		cw-voc:hospitalized			        215 ;
+		cw-voc:intensive-care			    31 .
+
+# Sample 3
+<http://www.example.org/covid-world/countries/DNK/2020-08-28> a qb:Observation ;
+		qb:dataSet 					        cw-voc:dataset ;
+		voc:refCountry 				        cw-countries:DNK ;
+		voc:refDate 					    "2021-10-01"^^xsd:date ;
+		cw-voc:cumulative-positive		    359237 ;
+		cw-voc:cumulative-deceased		    2659 ;
+		cw-voc:cumulative-recovered	        351407 ;
+		cw-voc:currently-positive		    5171 ;
+		cw-voc:hospitalized			        83 ;
+		cw-voc:intensive-care			    0 .

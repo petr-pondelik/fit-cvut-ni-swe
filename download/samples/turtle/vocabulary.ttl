@@ -1,0 +1,157 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+
+@prefix voc: <http://www.example.org/vocabulary/> .
+@prefix ls-voc: <http://www.example.org/life-satisfaction/vocabulary/> .
+@prefix cw-voc: <http://www.example.org/covid-world/vocabulary/> .
+@prefix ccz-voc: <http://www.example.org/covid-cze/vocabulary/> .
+
+
+
+########################################################
+#                   LIFE SATISFACTION
+########################################################
+
+
+########################################
+#   DataCube dimensions definition
+########################################
+
+# Define country dimension and it's range
+voc:refCountry a qb:DimensionProperty ;
+        rdfs:label  "Country reference."@en ;
+        rdfs:subPropertyOf sdmx-dimension:refArea ;
+        rdfs:range  skos:Concept ;
+        qb:concept sdmx-concept:refArea .
+
+# Define year dimension and it's range
+voc:refYear a qb:DimensionProperty ;
+        rdfs:label  "Year reference."@en ;
+        rdfs:subPropertyOf sdmx-dimension:refPeriod ;
+        rdfs:range  xsd:gYear ;
+        qb:concept sdmx-concept:refPeriod .
+
+
+########################################
+#   DataCube measures definition
+########################################
+
+# Define happiness-cantril-ladder measure and it's range
+ls-voc:happiness-cantril-ladder a rdf:Property, qb:MeasureProperty ;
+        rdfs:label  "Life satisfaction by Cantril Ladder happiness."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range  xsd:double .
+
+
+
+########################################################
+#                   COVID WORLD
+########################################################
+
+
+########################################
+#   DataCube dimensions definition
+########################################
+
+# Date dimension definition and range
+voc:refDate a qb:DimensionProperty ;
+        rdfs:label  "Date reference."@en ;
+        rdfs:subPropertyOf sdmx-dimension:refPeriod ;
+        rdfs:range  xsd:date ;
+        qb:concept sdmx-concept:refPeriod .
+
+# EU country flag definition
+voc:eu-country a rdf:Property ;
+        rdfs:label  "Flag attribute describing if the country is a member of EU."@en ;
+        rdfs:range  xsd:boolean .
+
+# EUCPM country flag definition
+voc:eucpm-country a rdf:Property ;
+        rdfs:label  "Flag attribute describing if the country is a member of EU Civil Protection Mechanism."@en ;
+        rdfs:range  xsd:boolean .
+
+
+########################################
+#   DataCube measures definition
+########################################
+
+cw-voc:cumulative-positive a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Cumulative number of positive cases until the given date."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+cw-voc:cumulative-deceased a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Cumulative number of deceased until the given date."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+cw-voc:cumulative-recovered a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Cumulative number of recovered people until the given date."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+cw-voc:currently-positive a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Current number of positive cases by the given date."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+cw-voc:hospitalized a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Number of hospitalized by the given date."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+cw-voc:intensive-care a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Number of hospitalized on the intensive care unit by the given date."@en ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+
+
+########################################################
+#                   COVID CZE
+########################################################
+
+
+########################################
+#   DataCube dimensions definition
+########################################
+
+# Kraj dimension definition and range
+voc:refKraj a qb:DimensionProperty ;
+        rdfs:label  "Reference na kraj."@cs ;
+        rdfs:subPropertyOf sdmx-dimension:refArea ;
+        rdfs:range  skos:Concept ;
+        qb:concept sdmx-concept:refArea .
+
+# Okres dimension definition and range
+voc:refOkres a qb:DimensionProperty ;
+        rdfs:label  "Reference na okres."@cs ;
+        rdfs:subPropertyOf sdmx-dimension:refArea ;
+        rdfs:range  skos:Concept ;
+        qb:concept sdmx-concept:refArea .
+
+
+###################################################
+#   DataCube measures definition
+###################################################
+
+ccz-voc:kumulativni-pocet-nakazenych a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Kumulativní počet nakažených do příslušného data."@cs ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+ccz-voc:kumulativni-pocet-vylecenych a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Kumulativní počet vyléčených do příslušného data."@cs ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .
+
+ccz-voc:kumulativni-pocet-umrti a rdf:Property, qb:MeasureProperty ;
+        rdfs:label "Kumulativní počet zemřelých do příslušného data."@cs ;
+        rdfs:subPropertyOf sdmx-measure:obsValue ;
+        rdfs:range xsd:integer .

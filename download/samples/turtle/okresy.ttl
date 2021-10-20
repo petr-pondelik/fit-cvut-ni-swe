@@ -1,0 +1,25 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+# TODO: Explore options for LAU predicate
+# use https://linked.opendata.cz/resource/domain/mfcr/monitor/ciselniky/Nuts instead of dbp:nuts ???
+# use dbp:name instead of skos:prefLabel ???
+
+###################################################
+#	Okresy concepts definition
+###################################################
+
+# Sample 1
+<http://www.example.org/ciselniky/okresy/CZ0202> a skos:Concept ;
+	dbp:nuts			'CZ0202' ;
+	skos:prefLabel 		'Beroun'@cs .
+
+# Sample 2
+<http://www.example.org/ciselniky/okresy/CZ020A> a skos:Concept ;
+	dbp:nuts			'CZ020A' ;
+	skos:prefLabel		'Praha-západ'@cs .
+
+# Sample 3
+<http://www.example.org/ciselniky/okresy/CZ0324> a skos:Concept ;
+	dbp:nuts			'CZ0324' ;
+	skos:prefLabel		'Plzeň-jih'@cs .

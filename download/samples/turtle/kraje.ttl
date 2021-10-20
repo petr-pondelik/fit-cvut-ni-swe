@@ -8,16 +8,16 @@
 ###################################################
 
 # Sample 1
-<http://www.example.org/kraje/CZ010> a skos:Concept ;
+<http://www.example.org/ciselniky/kraje/CZ010> a skos:Concept ;
 	dbp:nuts	'CZ010' ;
 	skos:prefLabel	'Hlavní město Praha'@cs .
 
 # Sample 2
-<http://www.example.org/kraje/CZ020> a skos:Concept ;
+<http://www.example.org/ciselniky/kraje/CZ020> a skos:Concept ;
 	dbp:nuts	'CZ020' ;
 	skos:prefLabel	'Středočeský kraj'@cs .
 
 # Sample 3
-<http://www.example.org/kraje/CZ032> a skos:Concept ;
+<http://www.example.org/ciselniky/kraje/CZ032> a skos:Concept ;
 	dbp:nuts	'CZ032' ;
 	skos:prefLabel	'Plzeňský kraj'@cs .
