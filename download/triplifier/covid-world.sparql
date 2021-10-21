@@ -51,7 +51,7 @@ WHERE {
     BIND ( xsd:decimal(?lon) AS ?lonDec )
     BIND ( xsd:boolean(LCASE(?EUcountry)) AS ?euCountryBool )
     BIND ( xsd:boolean(LCASE(?EUCPMcountry)) AS ?eucpmCountryBool )
-    BIND ( IRI(CONCAT('http://www.example.org/life-satisfaction/countries/', ?iso3, '/', ?Date)) AS ?covidWorldObs )
+    BIND ( IRI(CONCAT('http://www.example.org/covid-world/countries/', ?iso3, '/', STR(?Date))) AS ?covidWorldObs )
     BIND ( xsd:date(?Date) AS ?obsDate )
     BIND ( xsd:integer(?CumulativePositive) AS ?cumulativePositiveInt )
     BIND ( xsd:integer(?CumulativeDeceased) AS ?cumulativeDeceasedInt )

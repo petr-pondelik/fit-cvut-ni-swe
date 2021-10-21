@@ -17,23 +17,23 @@ echo "DATA_DIR: ${DATA_DIR}, OUTPUT_DIR: ${OUTPUT_DIR}, TARQL: ${TARQL}"
 # Kraje and okresy triplification
 # ==================================================
 
-#$TARQL -e utf-8 "./kraje.sparql" > "${OUTPUT_DIR}/kraje.ttl"
-#$TARQL -e utf-8 "./okresy.sparql" > "${OUTPUT_DIR}/okresy.ttl"
+$TARQL -e utf-8 "./kraje.sparql" > "${OUTPUT_DIR}/kraje.ttl"
+$TARQL -e utf-8 "./okresy.sparql" > "${OUTPUT_DIR}/okresy.ttl"
 
 # ==================================================
 # Life satisfaction triplification
 # ==================================================
 
-#$TARQL -e utf-8 --dedup 10000 "./life-satisfaction.sparql" > "${OUTPUT_DIR}/life-satisfaction.ttl"
+$TARQL -e utf-8 --dedup 10000 "./life-satisfaction.sparql" > "${OUTPUT_DIR}/life-satisfaction.ttl"
 
 # ==================================================
 # Covid world triplification
 # ==================================================
 
-$TARQL -e utf-8 --dedup 1000000 "./covid-world.sparql" > "${OUTPUT_DIR}/covid-world.ttl"
+$TARQL -e utf-8 --dedup 1500000 "./covid-world.sparql" > "${OUTPUT_DIR}/covid-world.ttl"
 
 # ==================================================
 # Covid CZE triplification
 # ==================================================
 
-# TODO
+$TARQL -e utf-8 -H --no-header-row --dedup 1000000 "./covid-cze.sparql" > "${OUTPUT_DIR}/covid-cze.ttl"

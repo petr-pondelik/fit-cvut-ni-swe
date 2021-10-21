@@ -1,0 +1,44 @@
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb:  <http://purl.org/linked-data/cube#>
+PREFIX dbp:  <http://dbpedia.org/property/>
+
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX ccz-voc: <http://www.example.org/covid-cze/vocabulary/>
+PREFIX ccz-kraje: <http://www.example.org/covid-cze/kraje/>
+PREFIX ccz-okresy: <http://www.example.org/covid-cze/okresy/>
+
+CONSTRUCT {
+
+    ?kraj a skos:Concept ;
+        dbp:nuts        ?b .
+
+    ?okres a skos:Concept ;
+        dbp:nuts        ?c ;
+        skos:broader    ?kraj .
+
+    ?covidCzeObs a qb:Observation ;
+        qb:dataSet                                  ccz-voc:dataset ;
+        voc:refKraj                                 ?kraj ;
+        voc:refOkres                                ?okres ;
+        voc:refDate                                 ?datum ;
+        ccz-voc:kumulativni-pocet-nakazenych        ?kumulativniPocetNakazenychInt ;
+        ccz-voc:kumulativni-pocet-vylecenych        ?kumulativniPocetVylecenychInt ;
+        ccz-voc:kumulativni-pocet-umrti             ?kumulativniPocetUmrtiInt .
+
+}
+FROM <file:./../data/covid-cze.csv>
+WHERE {
+
+    BIND ( IRI(CONCAT('http://www.example.org/covid-cze/kraje/', ?b)) AS ?kraj )
+    BIND ( IRI(CONCAT('http://www.example.org/covid-cze/okresy/', ?c)) AS ?okres )
+    BIND ( IRI(CONCAT('http://www.example.org/covid-cze/okresy/', STR(?c), '/', ?a)) AS ?covidCzeObs )
+    BIND ( xsd:date(?a) AS ?obsDate )
+    BIND ( xsd:integer(?d) AS ?kumulativniPocetNakazenychInt)
+    BIND ( xsd:integer(?e) AS ?kumulativniPocetVylecenychInt)
+    BIND ( xsd:integer(?f) AS ?kumulativniPocetUmrtiInt)
+
+
+}
+OFFSET 1
