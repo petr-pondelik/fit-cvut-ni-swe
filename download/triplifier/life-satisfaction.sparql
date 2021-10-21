@@ -1,0 +1,36 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb:  <http://purl.org/linked-data/cube#>
+PREFIX dbp:  <http://dbpedia.org/property/>
+
+PREFIX ls-countries: <http://www.example.org/life-satisfaction/countries/>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX ls-voc: <http://www.example.org/life-satisfaction/vocabulary/>
+
+
+CONSTRUCT {
+
+    ?country a skos:Concept ;
+        rdfs:label          ?countryNameEn ;
+        skos:prefLabel      ?countryNameEn ;
+        dbp:name            ?countryNameEn ;
+        dbp:iso3166code     ?iso3166 .
+
+    ?lifeSatisfactionObs a qb:Observation ;
+        qb:dataSet                          ls-voc:dataset ;
+        voc:refCountry                      ?country ;
+        voc:refYear                         ?obsYear ;
+        ls-voc:happiness-cantril-ladder     ?obsValueDec .
+
+}
+FROM <file:./../data/life-satisfaction.csv>
+WHERE {
+    BIND ( IRI(CONCAT('http://www.example.org/life-satisfaction/countries/', ?Code)) AS ?country )
+    BIND ( STRLANG(?Entity, "en") AS ?countryNameEn )
+    BIND ( ?Code AS ?iso3166 )
+    BIND ( IRI(CONCAT('http://www.example.org/life-satisfaction/countries/', ?Code, '/', ?Year)) AS ?lifeSatisfactionObs )
+    BIND ( xsd:gYear(?Year) AS ?obsYear )
+    BIND ( xsd:decimal(?Life_satisfaction_in_Cantril_Ladder__World_Happiness_Report_2021_) AS ?obsValueDec )
+}
+OFFSET 1

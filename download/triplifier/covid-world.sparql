@@ -1,0 +1,66 @@
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb:  <http://purl.org/linked-data/cube#>
+PREFIX dbp:  <http://dbpedia.org/property/>
+
+PREFIX cw-countries: <http://www.example.org/covid-world/countries/>
+PREFIX cw-continents: <http://www.example.org/covid-world/continents/>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
+
+
+CONSTRUCT {
+
+    ?continent a skos:Concept ;
+        rdfs:label          ?continentShortEn ;
+        skos:prefLabel      ?continentShortEn .
+
+    ?country a skos:Concept ;
+        rdfs:label              ?countryNameEn ;
+        skos:prefLabel          ?countryNameEn ;
+        dbp:name                ?countryNameEn ;
+        dbp:iso3166code         ?iso3 ;
+        dbp:nuts                ?NUTS ;
+        dbp:lat                 ?latDec ;
+        dbp:lon                 ?lonDec ;
+        cw-voc:eu-country       ?euCountryBool ;
+        cw-voc:eucpm-country    ?eucpmCountryBool ;
+        skos:broader            ?continent .
+
+    ?covidWorldObs a qb:Observation ;
+        qb:dataSet 					        cw-voc:dataset ;
+        voc:refCountry                      ?country ;
+        voc:refDate                         ?obsDate ;
+        cw-voc:cumulative-positive          ?cumulativePositiveInt ;
+        cw-voc:cumulative-deceased          ?cumulativeDeceasedInt ;
+        cw-voc:cumulative-recovered         ?cumulativeRecoveredInt ;
+        cw-voc:currently-positive           ?currentlyPositiveInt ;
+        cw-voc:hospitalized                 ?hospitalizedInt ;
+        cw-voc:intensive-care               ?intensiveCareInt .
+
+}
+FROM <file:./../data/covid-world.csv>
+WHERE {
+
+    BIND ( IRI(CONCAT('http://www.example.org/covid-world/continents/', ?Continent)) AS ?continent)
+    BIND ( STRLANG(?Continent, "en") AS ?continentShortEn)
+    BIND ( IRI(CONCAT('http://www.example.org/covid-world/countries/', ?iso3)) AS ?country )
+    BIND ( STRLANG(?CountryName, "en") AS ?countryNameEn )
+    BIND ( xsd:decimal(?lat) AS ?latDec )
+    BIND ( xsd:decimal(?lon) AS ?lonDec )
+    BIND ( xsd:boolean(LCASE(?EUcountry)) AS ?euCountryBool )
+    BIND ( xsd:boolean(LCASE(?EUCPMcountry)) AS ?eucpmCountryBool )
+    BIND ( IRI(CONCAT('http://www.example.org/life-satisfaction/countries/', ?iso3, '/', ?Date)) AS ?covidWorldObs )
+    BIND ( xsd:date(?Date) AS ?obsDate )
+    BIND ( xsd:integer(?CumulativePositive) AS ?cumulativePositiveInt )
+    BIND ( xsd:integer(?CumulativeDeceased) AS ?cumulativeDeceasedInt )
+    BIND ( xsd:integer(?CumulativeRecovered) AS ?cumulativeRecoveredInt )
+    BIND ( xsd:integer(?CurrentlyPositive) AS ?currentlyPositiveInt )
+    BIND ( xsd:integer(?Hospitalized) AS ?hospitalizedInt )
+    BIND ( xsd:integer(?IntensiveCare) AS ?intensiveCareInt )
+
+    FILTER ( STR(?continentShortEn) != "WW" )
+
+}
+OFFSET 1

@@ -1,0 +1,21 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dbp:  <http://dbpedia.org/property/>
+
+CONSTRUCT {
+
+    ?okres a skos:Concept ;
+        rdfs:label          ?okresNameCs ;
+        skos:prefLabel      ?okresNameCs ;
+        dbp:nuts            ?okresNuts .
+
+}
+FROM <file:./../data/okresy.csv>
+WHERE {
+
+    BIND (IRI(CONCAT('http://www.example.org/ciselniky/okresy/', ?kod_polozky)) AS ?okres)
+    BIND (?kod_polozky AS ?okresNuts)
+    BIND (STRLANG(?nazev_polozky, "cs") AS ?okresNameCs)
+
+}
+OFFSET 1
