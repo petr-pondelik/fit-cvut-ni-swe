@@ -53,6 +53,7 @@ ccz-voc:dataset a qb:DataSet ;
 	qb:dataSet 								    ccz-voc:dataset ;
 	voc:refKraj								    ccz-kraje:CZ020 ;
 	voc:refOkres								ccz-kraje:CZ0201 ;
+	voc:refDate                                 "2020-12-10"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		6985 ;
 	ccz-voc:kumulativni-pocet-vylecenych		6391 ;
 	ccz-voc:kumulativni-pocet-umrti			    143 .
@@ -62,6 +63,7 @@ ccz-voc:dataset a qb:DataSet ;
 	qb:dataSet 								    ccz-voc:dataset ;
 	voc:refKraj								    ccz-kraje:CZ020 ;
 	voc:refOkres								ccz-okresy:CZ0201 ;
+	voc:refDate                                 "2021-05-13"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		18538 ;
 	ccz-voc:kumulativni-pocet-vylecenych		18221 ;
 	ccz-voc:kumulativni-pocet-umrti			    365 .
@@ -71,6 +73,7 @@ ccz-voc:dataset a qb:DataSet ;
 	qb:dataSet 								    ccz-voc:dataset ;
 	voc:refKraj								    ccz-kraje:CZ020 ;
 	voc:refOkres								ccz-okresy:CZ0201 ;
+	voc:refDate                                 "2021-09-21"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		18814 ;
 	ccz-voc:kumulativni-pocet-vylecenych		18612 ;
 	ccz-voc:kumulativni-pocet-umrti			    369 .

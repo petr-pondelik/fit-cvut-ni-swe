@@ -16,7 +16,6 @@
 #   DataCube DataSet definition
 ###################################################
 
-
 # DataSet structure definition
 cw-voc:dataset-definition a qb:DataStructureDefinition ;
     # The dimensions
@@ -24,7 +23,7 @@ cw-voc:dataset-definition a qb:DataStructureDefinition ;
     qb:component [ qb:dimension voc:refDate; qb:order 2 ] ;
 
     # The measures
-    qb:component [ qb:measure cw-voc:comulative-positive ] ;
+    qb:component [ qb:measure cw-voc:cumulative-positive ] ;
     qb:component [ qb:measure cw-voc:cumulative-deceased ] ;
     qb:component [ qb:measure cw-voc:cumulative-recovered ] ;
     qb:component [ qb:measure cw-voc:currently-positive ] ;
@@ -34,7 +33,7 @@ cw-voc:dataset-definition a qb:DataStructureDefinition ;
 cw-voc:dataset a qb:DataSet ;
     rdfs:label      "Covid-19 measures around the world."@en ;
     rdfs:comment    "Dataset containing Covid-19 measures around the world organized by country and by date."@en ;
-    qb:structure    cw-voc:dsd-covid-world .
+    qb:structure    cw-voc:dataset-definition .
 
 
 ###################################################
@@ -50,8 +49,8 @@ cw-voc:dataset a qb:DataSet ;
 	dbp:nuts					"DK" ;
 	dbp:lat 					56.155403 ;
 	dbp:lon 					11.617223 ;
-	voc:eu-country				"true"^^xsd:boolean ;
-	voc:eucpm-country  			"true"^^xsd:boolean ;
+	cw-voc:eu-country			"true"^^xsd:boolean ;
+	cw-voc:eucpm-country  		"true"^^xsd:boolean ;
 	skos:broader				cw-continents:eu .
 
 
