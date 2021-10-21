@@ -12,35 +12,14 @@
 
 
 ###################################################
-#   DataCube DataSet definition
-###################################################
-
-# DataSet structure definition
-ccz-voc:dataset-definition a qb:DataStructureDefinition ;
-    # The dimensions
-    qb:component [ qb:dimension voc:refKraj; qb:order 1 ] ;
-    qb:component [ qb:dimension voc:refOkres; qb:order 2 ] ;
-    qb:component [ qb:dimension voc:refDate; qb:order 3 ] ;
-    # The measures(s)
-    qb:component [ qb:measure ccz-voc:kumulativni-pocet-nakazenych ] ;
-    qb:component [ qb:measure ccz-voc:kumulativni-pocet-vylecenych ] ;
-    qb:component [ qb:measure ccz-voc:kumulativni-pocet-umrti ] .
-
-ccz-voc:dataset a qb:DataSet ;
-    rdfs:label          "Statistiky pandemie Covid-19 v ČR."@cs ;
-    rdfs:comment        "Datová sada obsahuje denní kumulativní statistiky pandemie COVID-19 pro ČR dle okresů."@cs ;
-    qb:structure        ccz-voc:dataset-definition .
-
-
-###################################################
 #	Kraje a okresy concepts definition
 ###################################################
 
 <http://www.example.org/covid-cze/kraje/CZ020> a skos:Concept ;
-	dbp:nuts		'CZ020' .
+	dbp:nuts		"CZ020" .
 
 <http://www.example.org/covid-cze/okresy/CZ0201> a skos:Concept ;
-	dbp:nuts		'CZ0201' ;
+	dbp:nuts		"CZ0201" ;
 	skos:broader	ccz-kraje:CZ020 .
 
 

@@ -4,7 +4,6 @@
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix dbp:  <http://dbpedia.org/property/> .
 
-@prefix eg: <http://www.example.org/> .
 @prefix cw-countries: <http://www.example.org/covid-world/countries/> .
 @prefix cw-continents: <http://www.example.org/covid-world/continents/> .
 @prefix voc: <http://www.example.org/vocabulary/> .
@@ -13,37 +12,16 @@
 
 
 ###################################################
-#   DataCube DataSet definition
-###################################################
-
-# DataSet structure definition
-cw-voc:dataset-definition a qb:DataStructureDefinition ;
-    # The dimensions
-    qb:component [ qb:dimension voc:refCountry; qb:order 1 ] ;
-    qb:component [ qb:dimension voc:refDate; qb:order 2 ] ;
-
-    # The measures
-    qb:component [ qb:measure cw-voc:cumulative-positive ] ;
-    qb:component [ qb:measure cw-voc:cumulative-deceased ] ;
-    qb:component [ qb:measure cw-voc:cumulative-recovered ] ;
-    qb:component [ qb:measure cw-voc:currently-positive ] ;
-    qb:component [ qb:measure cw-voc:hospitalized ] ;
-    qb:component [ qb:measure cw-voc:intensive-care ] .
-
-cw-voc:dataset a qb:DataSet ;
-    rdfs:label      "Covid-19 measures around the world."@en ;
-    rdfs:comment    "Dataset containing Covid-19 measures around the world organized by country and by date."@en ;
-    qb:structure    cw-voc:dataset-definition .
-
-
-###################################################
 #	Countries and continents concepts definition
 ###################################################
 
 <http://www.example.org/covid-world/continents/EU> a skos:Concept ;
-	rdfs:label	"EU"@en .
+	rdfs:label	    "EU"@en ;
+	skos:prefLabel  "EU"@en .
 
 <http://www.example.org/covid-world/countries/DNK> a skos:Concept ;
+    rdfs:label                  "Denmark"@en ;
+    skos:prefLabel              "Denmark"@en ;
 	dbp:name					"Denmark"@en ;
 	dbp:iso3166code				"DNK" ;
 	dbp:nuts					"DK" ;
@@ -51,7 +29,7 @@ cw-voc:dataset a qb:DataSet ;
 	dbp:lon 					11.617223 ;
 	cw-voc:eu-country			"true"^^xsd:boolean ;
 	cw-voc:eucpm-country  		"true"^^xsd:boolean ;
-	skos:broader				cw-continents:eu .
+	skos:broader				cw-continents:EU .
 
 
 ###################################################

@@ -1,3 +1,4 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dbp:  <http://dbpedia.org/property/> .
 
@@ -11,15 +12,18 @@
 
 # Sample 1
 <http://www.example.org/ciselniky/okresy/CZ0202> a skos:Concept ;
-	dbp:nuts			'CZ0202' ;
-	skos:prefLabel 		'Beroun'@cs .
+	rdfs:label	        "Beroun"@cs ;
+	skos:prefLabel 		"Beroun"@cs ;
+	dbp:nuts			"CZ0202" .
 
 # Sample 2
 <http://www.example.org/ciselniky/okresy/CZ020A> a skos:Concept ;
-	dbp:nuts			'CZ020A' ;
-	skos:prefLabel		'Praha-západ'@cs .
+	rdfs:label	        "Praha-západ"@cs ;
+	skos:prefLabel		"Praha-západ"@cs ;
+	dbp:nuts			"CZ020A" .
 
 # Sample 3
 <http://www.example.org/ciselniky/okresy/CZ0324> a skos:Concept ;
-	dbp:nuts			'CZ0324' ;
-	skos:prefLabel		'Plzeň-jih'@cs .
+	rdfs:label	        "Plzeň-jih"@cs ;
+	skos:prefLabel		"Plzeň-jih"@cs ;
+	dbp:nuts			"CZ0324" .

@@ -10,36 +10,20 @@
 
 
 
-########################################
-#   DataCube DataSet definition
-########################################
-
-ls-voc:dataset-definition a qb:DataStructureDefinition ;
-          # The dimensions
-          qb:component [ qb:dimension voc:refCountry; qb:order 1 ] ;
-          qb:component [ qb:dimension voc:refYear; qb:order 2 ] ;
-
-          # The measure(s)
-          qb:component [ qb:measure ls-voc:happiness-cantril-ladder ] .
-
-
-# Publisher can be linked (https://www.w3.org/TR/vocab-data-cube/#metadata)
-ls-voc:dataset a qb:DataSet ;
-         rdfs:label      "Self-reported Life Satisfaction"@en ;
-         rdfs:comment    "Self-reported Life Satisfaction dataset, 2005 to 2020."@en ;
-         qb:structure    ls-voc:dataset-definition .
-
-
 ###################################################
 #   Countries concepts definition
 ###################################################
 
-<http://www.example.org/life-satisfaction/countries/Finland> a skos:Concept ;
+<http://www.example.org/life-satisfaction/countries/FIN> a skos:Concept ;
+	    rdfs:label	        "Finland"@en ;
+        skos:prefLabel      "Finland"@en ;
         dbp:name            "Finland"@en ;
         dbp:iso3166code     "FIN" .
 
 
-<http://www.example.org/life-satisfaction/countries/Denmark> a skos:Concept ;
+<http://www.example.org/life-satisfaction/countries/DNK> a skos:Concept ;
+	    rdfs:label	        "Denmark"@en ;
+        skos:prefLabel      "Denmark"@en ;
         dbp:name            "Denmark"@en ;
         dbp:iso3166code     "DNK" .
 
@@ -49,22 +33,22 @@ ls-voc:dataset a qb:DataSet ;
 ###################################################
 
 # Sample 1
-<http://www.example.org/life-satisfaction/countries/Finland/2019> a qb:Observation ;
+<http://www.example.org/life-satisfaction/countries/FIN/2019> a qb:Observation ;
         qb:dataSet                                  ls-voc:dataset ;
-        voc:refCountry                              ls-countries:Finland ;
+        voc:refCountry                              ls-countries:FIN ;
         voc:refYear                                 "2019"^^xsd:gYear ;
         ls-voc:happiness-cantril-ladder             7.78 .
 
 # Sample 2
-<http://www.example.org/life-satisfaction/countries/Denmark/2019> a qb:Observation ;
+<http://www.example.org/life-satisfaction/countries/DNK/2019> a qb:Observation ;
         qb:dataSet                                  ls-voc:dataset ;
-        voc:refCountry                              ls-countries:Denmark ;
+        voc:refCountry                              ls-countries:DNK ;
         voc:refYear                                 "2019"^^xsd:gYear ;
         ls-voc:happiness-cantril-ladder             7.693 .
 
 # Sample 3
-<http://www.example.org/life-satisfaction/countries/Denmark/2019> a qb:Observation ;
+<http://www.example.org/life-satisfaction/countries/DNK/2019> a qb:Observation ;
         qb:dataSet                                  ls-voc:dataset ;
-        voc:refCountry                              ls-countries:Denmark ;
+        voc:refCountry                              ls-countries:DNK ;
         voc:refYear                                 "2020"^^xsd:gYear ;
         ls-voc:happiness-cantril-ladder             7.515 .

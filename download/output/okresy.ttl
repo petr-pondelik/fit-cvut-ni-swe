@@ -1,393 +1,472 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema> .
 @prefix dbp:  <http://dbpedia.org/property/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <http://www.example.org/ciselniky/okresy/CZ0999>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0999" ;
-        skos:prefLabel  "Nezařazení"@cs .
+        rdfs:label      "Nezařazení"@cs ;
+        skos:prefLabel  "Nezařazení"@cs ;
+        dbp:nuts        "CZ0999" .
 
 <http://www.example.org/ciselniky/okresy/CZ0100>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0100" ;
-        skos:prefLabel  "Praha (okres)"@cs .
+        rdfs:label      "Praha (okres)"@cs ;
+        skos:prefLabel  "Praha (okres)"@cs ;
+        dbp:nuts        "CZ0100" .
 
 <http://www.example.org/ciselniky/okresy/CZ0201>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0201" ;
-        skos:prefLabel  "Benešov"@cs .
+        rdfs:label      "Benešov"@cs ;
+        skos:prefLabel  "Benešov"@cs ;
+        dbp:nuts        "CZ0201" .
 
 <http://www.example.org/ciselniky/okresy/CZ0202>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0202" ;
-        skos:prefLabel  "Beroun"@cs .
+        rdfs:label      "Beroun"@cs ;
+        skos:prefLabel  "Beroun"@cs ;
+        dbp:nuts        "CZ0202" .
 
 <http://www.example.org/ciselniky/okresy/CZ0203>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0203" ;
-        skos:prefLabel  "Kladno"@cs .
+        rdfs:label      "Kladno"@cs ;
+        skos:prefLabel  "Kladno"@cs ;
+        dbp:nuts        "CZ0203" .
 
 <http://www.example.org/ciselniky/okresy/CZ0204>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0204" ;
-        skos:prefLabel  "Kolín"@cs .
+        rdfs:label      "Kolín"@cs ;
+        skos:prefLabel  "Kolín"@cs ;
+        dbp:nuts        "CZ0204" .
 
 <http://www.example.org/ciselniky/okresy/CZ0205>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0205" ;
-        skos:prefLabel  "Kutná Hora"@cs .
+        rdfs:label      "Kutná Hora"@cs ;
+        skos:prefLabel  "Kutná Hora"@cs ;
+        dbp:nuts        "CZ0205" .
 
 <http://www.example.org/ciselniky/okresy/CZ0206>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0206" ;
-        skos:prefLabel  "Mělník"@cs .
+        rdfs:label      "Mělník"@cs ;
+        skos:prefLabel  "Mělník"@cs ;
+        dbp:nuts        "CZ0206" .
 
 <http://www.example.org/ciselniky/okresy/CZ0207>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0207" ;
-        skos:prefLabel  "Mladá Boleslav"@cs .
+        rdfs:label      "Mladá Boleslav"@cs ;
+        skos:prefLabel  "Mladá Boleslav"@cs ;
+        dbp:nuts        "CZ0207" .
 
 <http://www.example.org/ciselniky/okresy/CZ0208>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0208" ;
-        skos:prefLabel  "Nymburk"@cs .
+        rdfs:label      "Nymburk"@cs ;
+        skos:prefLabel  "Nymburk"@cs ;
+        dbp:nuts        "CZ0208" .
 
 <http://www.example.org/ciselniky/okresy/CZ0209>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0209" ;
-        skos:prefLabel  "Praha-východ"@cs .
+        rdfs:label      "Praha-východ"@cs ;
+        skos:prefLabel  "Praha-východ"@cs ;
+        dbp:nuts        "CZ0209" .
 
 <http://www.example.org/ciselniky/okresy/CZ020A>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ020A" ;
-        skos:prefLabel  "Praha-západ"@cs .
+        rdfs:label      "Praha-západ"@cs ;
+        skos:prefLabel  "Praha-západ"@cs ;
+        dbp:nuts        "CZ020A" .
 
 <http://www.example.org/ciselniky/okresy/CZ020B>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ020B" ;
-        skos:prefLabel  "Příbram"@cs .
+        rdfs:label      "Příbram"@cs ;
+        skos:prefLabel  "Příbram"@cs ;
+        dbp:nuts        "CZ020B" .
 
 <http://www.example.org/ciselniky/okresy/CZ020C>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ020C" ;
-        skos:prefLabel  "Rakovník"@cs .
+        rdfs:label      "Rakovník"@cs ;
+        skos:prefLabel  "Rakovník"@cs ;
+        dbp:nuts        "CZ020C" .
 
 <http://www.example.org/ciselniky/okresy/CZ0311>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0311" ;
-        skos:prefLabel  "České Budějovice"@cs .
+        rdfs:label      "České Budějovice"@cs ;
+        skos:prefLabel  "České Budějovice"@cs ;
+        dbp:nuts        "CZ0311" .
 
 <http://www.example.org/ciselniky/okresy/CZ0312>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0312" ;
-        skos:prefLabel  "Český Krumlov"@cs .
+        rdfs:label      "Český Krumlov"@cs ;
+        skos:prefLabel  "Český Krumlov"@cs ;
+        dbp:nuts        "CZ0312" .
 
 <http://www.example.org/ciselniky/okresy/CZ0313>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0313" ;
-        skos:prefLabel  "Jindřichův Hradec"@cs .
+        rdfs:label      "Jindřichův Hradec"@cs ;
+        skos:prefLabel  "Jindřichův Hradec"@cs ;
+        dbp:nuts        "CZ0313" .
 
 <http://www.example.org/ciselniky/okresy/CZ0314>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0314" ;
-        skos:prefLabel  "Písek"@cs .
+        rdfs:label      "Písek"@cs ;
+        skos:prefLabel  "Písek"@cs ;
+        dbp:nuts        "CZ0314" .
 
 <http://www.example.org/ciselniky/okresy/CZ0315>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0315" ;
-        skos:prefLabel  "Prachatice"@cs .
+        rdfs:label      "Prachatice"@cs ;
+        skos:prefLabel  "Prachatice"@cs ;
+        dbp:nuts        "CZ0315" .
 
 <http://www.example.org/ciselniky/okresy/CZ0316>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0316" ;
-        skos:prefLabel  "Strakonice"@cs .
+        rdfs:label      "Strakonice"@cs ;
+        skos:prefLabel  "Strakonice"@cs ;
+        dbp:nuts        "CZ0316" .
 
 <http://www.example.org/ciselniky/okresy/CZ0317>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0317" ;
-        skos:prefLabel  "Tábor"@cs .
+        rdfs:label      "Tábor"@cs ;
+        skos:prefLabel  "Tábor"@cs ;
+        dbp:nuts        "CZ0317" .
 
 <http://www.example.org/ciselniky/okresy/CZ0321>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0321" ;
-        skos:prefLabel  "Domažlice"@cs .
+        rdfs:label      "Domažlice"@cs ;
+        skos:prefLabel  "Domažlice"@cs ;
+        dbp:nuts        "CZ0321" .
 
 <http://www.example.org/ciselniky/okresy/CZ0322>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0322" ;
-        skos:prefLabel  "Klatovy"@cs .
+        rdfs:label      "Klatovy"@cs ;
+        skos:prefLabel  "Klatovy"@cs ;
+        dbp:nuts        "CZ0322" .
 
 <http://www.example.org/ciselniky/okresy/CZ0323>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0323" ;
-        skos:prefLabel  "Plzeň-město"@cs .
+        rdfs:label      "Plzeň-město"@cs ;
+        skos:prefLabel  "Plzeň-město"@cs ;
+        dbp:nuts        "CZ0323" .
 
 <http://www.example.org/ciselniky/okresy/CZ0324>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0324" ;
-        skos:prefLabel  "Plzeň-jih"@cs .
+        rdfs:label      "Plzeň-jih"@cs ;
+        skos:prefLabel  "Plzeň-jih"@cs ;
+        dbp:nuts        "CZ0324" .
 
 <http://www.example.org/ciselniky/okresy/CZ0325>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0325" ;
-        skos:prefLabel  "Plzeň-sever"@cs .
+        rdfs:label      "Plzeň-sever"@cs ;
+        skos:prefLabel  "Plzeň-sever"@cs ;
+        dbp:nuts        "CZ0325" .
 
 <http://www.example.org/ciselniky/okresy/CZ0326>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0326" ;
-        skos:prefLabel  "Rokycany"@cs .
+        rdfs:label      "Rokycany"@cs ;
+        skos:prefLabel  "Rokycany"@cs ;
+        dbp:nuts        "CZ0326" .
 
 <http://www.example.org/ciselniky/okresy/CZ0327>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0327" ;
-        skos:prefLabel  "Tachov"@cs .
+        rdfs:label      "Tachov"@cs ;
+        skos:prefLabel  "Tachov"@cs ;
+        dbp:nuts        "CZ0327" .
 
 <http://www.example.org/ciselniky/okresy/CZ0411>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0411" ;
-        skos:prefLabel  "Cheb"@cs .
+        rdfs:label      "Cheb"@cs ;
+        skos:prefLabel  "Cheb"@cs ;
+        dbp:nuts        "CZ0411" .
 
 <http://www.example.org/ciselniky/okresy/CZ0412>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0412" ;
-        skos:prefLabel  "Karlovy Vary"@cs .
+        rdfs:label      "Karlovy Vary"@cs ;
+        skos:prefLabel  "Karlovy Vary"@cs ;
+        dbp:nuts        "CZ0412" .
 
 <http://www.example.org/ciselniky/okresy/CZ0413>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0413" ;
-        skos:prefLabel  "Sokolov"@cs .
+        rdfs:label      "Sokolov"@cs ;
+        skos:prefLabel  "Sokolov"@cs ;
+        dbp:nuts        "CZ0413" .
 
 <http://www.example.org/ciselniky/okresy/CZ0421>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0421" ;
-        skos:prefLabel  "Děčín"@cs .
+        rdfs:label      "Děčín"@cs ;
+        skos:prefLabel  "Děčín"@cs ;
+        dbp:nuts        "CZ0421" .
 
 <http://www.example.org/ciselniky/okresy/CZ0422>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0422" ;
-        skos:prefLabel  "Chomutov"@cs .
+        rdfs:label      "Chomutov"@cs ;
+        skos:prefLabel  "Chomutov"@cs ;
+        dbp:nuts        "CZ0422" .
 
 <http://www.example.org/ciselniky/okresy/CZ0423>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0423" ;
-        skos:prefLabel  "Litoměřice"@cs .
+        rdfs:label      "Litoměřice"@cs ;
+        skos:prefLabel  "Litoměřice"@cs ;
+        dbp:nuts        "CZ0423" .
 
 <http://www.example.org/ciselniky/okresy/CZ0424>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0424" ;
-        skos:prefLabel  "Louny"@cs .
+        rdfs:label      "Louny"@cs ;
+        skos:prefLabel  "Louny"@cs ;
+        dbp:nuts        "CZ0424" .
 
 <http://www.example.org/ciselniky/okresy/CZ0425>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0425" ;
-        skos:prefLabel  "Most"@cs .
+        rdfs:label      "Most"@cs ;
+        skos:prefLabel  "Most"@cs ;
+        dbp:nuts        "CZ0425" .
 
 <http://www.example.org/ciselniky/okresy/CZ0426>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0426" ;
-        skos:prefLabel  "Teplice"@cs .
+        rdfs:label      "Teplice"@cs ;
+        skos:prefLabel  "Teplice"@cs ;
+        dbp:nuts        "CZ0426" .
 
 <http://www.example.org/ciselniky/okresy/CZ0427>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0427" ;
-        skos:prefLabel  "Ústí nad Labem"@cs .
+        rdfs:label      "Ústí nad Labem"@cs ;
+        skos:prefLabel  "Ústí nad Labem"@cs ;
+        dbp:nuts        "CZ0427" .
 
 <http://www.example.org/ciselniky/okresy/CZ0511>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0511" ;
-        skos:prefLabel  "Česká Lípa"@cs .
+        rdfs:label      "Česká Lípa"@cs ;
+        skos:prefLabel  "Česká Lípa"@cs ;
+        dbp:nuts        "CZ0511" .
 
 <http://www.example.org/ciselniky/okresy/CZ0512>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0512" ;
-        skos:prefLabel  "Jablonec nad Nisou"@cs .
+        rdfs:label      "Jablonec nad Nisou"@cs ;
+        skos:prefLabel  "Jablonec nad Nisou"@cs ;
+        dbp:nuts        "CZ0512" .
 
 <http://www.example.org/ciselniky/okresy/CZ0513>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0513" ;
-        skos:prefLabel  "Liberec"@cs .
+        rdfs:label      "Liberec"@cs ;
+        skos:prefLabel  "Liberec"@cs ;
+        dbp:nuts        "CZ0513" .
 
 <http://www.example.org/ciselniky/okresy/CZ0514>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0514" ;
-        skos:prefLabel  "Semily"@cs .
+        rdfs:label      "Semily"@cs ;
+        skos:prefLabel  "Semily"@cs ;
+        dbp:nuts        "CZ0514" .
 
 <http://www.example.org/ciselniky/okresy/CZ0521>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0521" ;
-        skos:prefLabel  "Hradec Králové"@cs .
+        rdfs:label      "Hradec Králové"@cs ;
+        skos:prefLabel  "Hradec Králové"@cs ;
+        dbp:nuts        "CZ0521" .
 
 <http://www.example.org/ciselniky/okresy/CZ0522>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0522" ;
-        skos:prefLabel  "Jičín"@cs .
+        rdfs:label      "Jičín"@cs ;
+        skos:prefLabel  "Jičín"@cs ;
+        dbp:nuts        "CZ0522" .
 
 <http://www.example.org/ciselniky/okresy/CZ0523>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0523" ;
-        skos:prefLabel  "Náchod"@cs .
+        rdfs:label      "Náchod"@cs ;
+        skos:prefLabel  "Náchod"@cs ;
+        dbp:nuts        "CZ0523" .
 
 <http://www.example.org/ciselniky/okresy/CZ0524>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0524" ;
-        skos:prefLabel  "Rychnov nad Kněžnou"@cs .
+        rdfs:label      "Rychnov nad Kněžnou"@cs ;
+        skos:prefLabel  "Rychnov nad Kněžnou"@cs ;
+        dbp:nuts        "CZ0524" .
 
 <http://www.example.org/ciselniky/okresy/CZ0525>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0525" ;
-        skos:prefLabel  "Trutnov"@cs .
+        rdfs:label      "Trutnov"@cs ;
+        skos:prefLabel  "Trutnov"@cs ;
+        dbp:nuts        "CZ0525" .
 
 <http://www.example.org/ciselniky/okresy/CZ0531>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0531" ;
-        skos:prefLabel  "Chrudim"@cs .
+        rdfs:label      "Chrudim"@cs ;
+        skos:prefLabel  "Chrudim"@cs ;
+        dbp:nuts        "CZ0531" .
 
 <http://www.example.org/ciselniky/okresy/CZ0532>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0532" ;
-        skos:prefLabel  "Pardubice"@cs .
+        rdfs:label      "Pardubice"@cs ;
+        skos:prefLabel  "Pardubice"@cs ;
+        dbp:nuts        "CZ0532" .
 
 <http://www.example.org/ciselniky/okresy/CZ0533>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0533" ;
-        skos:prefLabel  "Svitavy"@cs .
+        rdfs:label      "Svitavy"@cs ;
+        skos:prefLabel  "Svitavy"@cs ;
+        dbp:nuts        "CZ0533" .
 
 <http://www.example.org/ciselniky/okresy/CZ0534>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0534" ;
-        skos:prefLabel  "Ústí nad Orlicí"@cs .
+        rdfs:label      "Ústí nad Orlicí"@cs ;
+        skos:prefLabel  "Ústí nad Orlicí"@cs ;
+        dbp:nuts        "CZ0534" .
 
 <http://www.example.org/ciselniky/okresy/CZ0631>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0631" ;
-        skos:prefLabel  "Havlíčkův Brod"@cs .
+        rdfs:label      "Havlíčkův Brod"@cs ;
+        skos:prefLabel  "Havlíčkův Brod"@cs ;
+        dbp:nuts        "CZ0631" .
 
 <http://www.example.org/ciselniky/okresy/CZ0632>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0632" ;
-        skos:prefLabel  "Jihlava"@cs .
+        rdfs:label      "Jihlava"@cs ;
+        skos:prefLabel  "Jihlava"@cs ;
+        dbp:nuts        "CZ0632" .
 
 <http://www.example.org/ciselniky/okresy/CZ0633>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0633" ;
-        skos:prefLabel  "Pelhřimov"@cs .
+        rdfs:label      "Pelhřimov"@cs ;
+        skos:prefLabel  "Pelhřimov"@cs ;
+        dbp:nuts        "CZ0633" .
 
 <http://www.example.org/ciselniky/okresy/CZ0634>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0634" ;
-        skos:prefLabel  "Třebíč"@cs .
+        rdfs:label      "Třebíč"@cs ;
+        skos:prefLabel  "Třebíč"@cs ;
+        dbp:nuts        "CZ0634" .
 
 <http://www.example.org/ciselniky/okresy/CZ0635>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0635" ;
-        skos:prefLabel  "Žďár nad Sázavou"@cs .
+        rdfs:label      "Žďár nad Sázavou"@cs ;
+        skos:prefLabel  "Žďár nad Sázavou"@cs ;
+        dbp:nuts        "CZ0635" .
 
 <http://www.example.org/ciselniky/okresy/CZ0641>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0641" ;
-        skos:prefLabel  "Blansko"@cs .
+        rdfs:label      "Blansko"@cs ;
+        skos:prefLabel  "Blansko"@cs ;
+        dbp:nuts        "CZ0641" .
 
 <http://www.example.org/ciselniky/okresy/CZ0642>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0642" ;
-        skos:prefLabel  "Brno-město"@cs .
+        rdfs:label      "Brno-město"@cs ;
+        skos:prefLabel  "Brno-město"@cs ;
+        dbp:nuts        "CZ0642" .
 
 <http://www.example.org/ciselniky/okresy/CZ0643>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0643" ;
-        skos:prefLabel  "Brno-venkov"@cs .
+        rdfs:label      "Brno-venkov"@cs ;
+        skos:prefLabel  "Brno-venkov"@cs ;
+        dbp:nuts        "CZ0643" .
 
 <http://www.example.org/ciselniky/okresy/CZ0644>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0644" ;
-        skos:prefLabel  "Břeclav"@cs .
+        rdfs:label      "Břeclav"@cs ;
+        skos:prefLabel  "Břeclav"@cs ;
+        dbp:nuts        "CZ0644" .
 
 <http://www.example.org/ciselniky/okresy/CZ0645>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0645" ;
-        skos:prefLabel  "Hodonín"@cs .
+        rdfs:label      "Hodonín"@cs ;
+        skos:prefLabel  "Hodonín"@cs ;
+        dbp:nuts        "CZ0645" .
 
 <http://www.example.org/ciselniky/okresy/CZ0646>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0646" ;
-        skos:prefLabel  "Vyškov"@cs .
+        rdfs:label      "Vyškov"@cs ;
+        skos:prefLabel  "Vyškov"@cs ;
+        dbp:nuts        "CZ0646" .
 
 <http://www.example.org/ciselniky/okresy/CZ0647>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0647" ;
-        skos:prefLabel  "Znojmo"@cs .
+        rdfs:label      "Znojmo"@cs ;
+        skos:prefLabel  "Znojmo"@cs ;
+        dbp:nuts        "CZ0647" .
 
 <http://www.example.org/ciselniky/okresy/CZ0711>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0711" ;
-        skos:prefLabel  "Jeseník"@cs .
+        rdfs:label      "Jeseník"@cs ;
+        skos:prefLabel  "Jeseník"@cs ;
+        dbp:nuts        "CZ0711" .
 
 <http://www.example.org/ciselniky/okresy/CZ0712>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0712" ;
-        skos:prefLabel  "Olomouc"@cs .
+        rdfs:label      "Olomouc"@cs ;
+        skos:prefLabel  "Olomouc"@cs ;
+        dbp:nuts        "CZ0712" .
 
 <http://www.example.org/ciselniky/okresy/CZ0713>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0713" ;
-        skos:prefLabel  "Prostějov"@cs .
+        rdfs:label      "Prostějov"@cs ;
+        skos:prefLabel  "Prostějov"@cs ;
+        dbp:nuts        "CZ0713" .
 
 <http://www.example.org/ciselniky/okresy/CZ0714>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0714" ;
-        skos:prefLabel  "Přerov"@cs .
+        rdfs:label      "Přerov"@cs ;
+        skos:prefLabel  "Přerov"@cs ;
+        dbp:nuts        "CZ0714" .
 
 <http://www.example.org/ciselniky/okresy/CZ0715>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0715" ;
-        skos:prefLabel  "Šumperk"@cs .
+        rdfs:label      "Šumperk"@cs ;
+        skos:prefLabel  "Šumperk"@cs ;
+        dbp:nuts        "CZ0715" .
 
 <http://www.example.org/ciselniky/okresy/CZ0721>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0721" ;
-        skos:prefLabel  "Kroměříž"@cs .
+        rdfs:label      "Kroměříž"@cs ;
+        skos:prefLabel  "Kroměříž"@cs ;
+        dbp:nuts        "CZ0721" .
 
 <http://www.example.org/ciselniky/okresy/CZ0722>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0722" ;
-        skos:prefLabel  "Uherské Hradiště"@cs .
+        rdfs:label      "Uherské Hradiště"@cs ;
+        skos:prefLabel  "Uherské Hradiště"@cs ;
+        dbp:nuts        "CZ0722" .
 
 <http://www.example.org/ciselniky/okresy/CZ0723>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0723" ;
-        skos:prefLabel  "Vsetín"@cs .
+        rdfs:label      "Vsetín"@cs ;
+        skos:prefLabel  "Vsetín"@cs ;
+        dbp:nuts        "CZ0723" .
 
 <http://www.example.org/ciselniky/okresy/CZ0724>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0724" ;
-        skos:prefLabel  "Zlín"@cs .
+        rdfs:label      "Zlín"@cs ;
+        skos:prefLabel  "Zlín"@cs ;
+        dbp:nuts        "CZ0724" .
 
 <http://www.example.org/ciselniky/okresy/CZ0801>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0801" ;
-        skos:prefLabel  "Bruntál"@cs .
+        rdfs:label      "Bruntál"@cs ;
+        skos:prefLabel  "Bruntál"@cs ;
+        dbp:nuts        "CZ0801" .
 
 <http://www.example.org/ciselniky/okresy/CZ0802>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0802" ;
-        skos:prefLabel  "Frýdek-Místek"@cs .
+        rdfs:label      "Frýdek-Místek"@cs ;
+        skos:prefLabel  "Frýdek-Místek"@cs ;
+        dbp:nuts        "CZ0802" .
 
 <http://www.example.org/ciselniky/okresy/CZ0803>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0803" ;
-        skos:prefLabel  "Karviná"@cs .
+        rdfs:label      "Karviná"@cs ;
+        skos:prefLabel  "Karviná"@cs ;
+        dbp:nuts        "CZ0803" .
 
 <http://www.example.org/ciselniky/okresy/CZ0804>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0804" ;
-        skos:prefLabel  "Nový Jičín"@cs .
+        rdfs:label      "Nový Jičín"@cs ;
+        skos:prefLabel  "Nový Jičín"@cs ;
+        dbp:nuts        "CZ0804" .
 
 <http://www.example.org/ciselniky/okresy/CZ0805>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0805" ;
-        skos:prefLabel  "Opava"@cs .
+        rdfs:label      "Opava"@cs ;
+        skos:prefLabel  "Opava"@cs ;
+        dbp:nuts        "CZ0805" .
 
 <http://www.example.org/ciselniky/okresy/CZ0806>
         rdf:type        skos:Concept ;
-        dbp:nuts        "CZ0806" ;
-        skos:prefLabel  "Ostrava-město"@cs .
+        rdfs:label      "Ostrava-město"@cs ;
+        skos:prefLabel  "Ostrava-město"@cs ;
+        dbp:nuts        "CZ0806" .
