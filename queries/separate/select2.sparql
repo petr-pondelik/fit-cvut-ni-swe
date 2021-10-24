@@ -1,7 +1,7 @@
 # Select the observations from Central Europe with more than 100 000 positive Covid-19 cases
 # Dataset: covid-world
 # Usage: FILTER, VALUES, OPTIONAL
-# OPTIONAL clause is needed to include all the records since there are several optional objects
+# Note: OPTIONAL clause is required to include all the records since there are several optional objects
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX qb: <http://purl.org/linked-data/cube#>

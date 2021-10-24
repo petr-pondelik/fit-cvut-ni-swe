@@ -1,6 +1,7 @@
-# Construct currently positive cases number
+# Construct currently positive cases value
 # Dataset: covid-cze
-# Usage: BIND
+# Usage: BIND, IF
+# Note: IF clause is used to handle negative values of currently positive caused by data irregularities (e.g. 2021-10-20	CZ010	CZ0100	191570	190358	2785)
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
@@ -11,18 +12,21 @@ CONSTRUCT {
 	?obs rdf:type qb:Observation ;
     	voc:refKraj ?kraj ;
     	voc:refOkres ?okres ;
-    	#voc:refDate ?obsDate ;
+    	voc:refDate ?obsDate ;
   		ccz-voc:aktualni-pocet-nakazenych ?currentlyPos .
 }
 WHERE {
 	?obs rdf:type qb:Observation ;
       	voc:refKraj ?kraj ;
 		voc:refOkres ?okres ;
-  		#voc:refDate ?obsDate ;
+  		voc:refDate ?obsDate ;
       	ccz-voc:kumulativni-pocet-nakazenych ?cumulPos ;
        	ccz-voc:kumulativni-pocet-vylecenych ?cumulRec ;
         ccz-voc:kumulativni-pocet-umrti ?cumulDeceased .
-  	BIND ( (?cumulPos - ?cumulRec - ?cumulDeceased)  AS ?currentlyPos )
+
+    BIND (
+      IF( (?cumulPos - ?cumulRec - ?cumulDeceased) >= 0, ?cumulPos - ?cumulRec - ?cumulDeceased, 0)  AS ?currentlyPos
+    )
 }
 ORDER BY DESC(?obsDate)
-LIMIT 1000
+LIMIT 100
