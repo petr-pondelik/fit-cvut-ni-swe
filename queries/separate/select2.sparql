@@ -1,5 +1,5 @@
 # Select the observations from Central Europe with more than 100 000 positive Covid-19 cases
-
+# Dataset: covid-world
 # Usage: FILTER, VALUES, OPTIONAL
 # OPTIONAL clause is needed to include all the records since there are several optional objects
 
