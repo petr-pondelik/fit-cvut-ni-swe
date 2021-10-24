@@ -1,0 +1,33 @@
+# Select the observations from Central Europe with more than 100 000 positive Covid-19 cases
+
+# Usage: FILTER, VALUES, OPTIONAL
+# OPTIONAL clause is needed to include all the records since there are several optional objects
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
+
+SELECT DISTINCT ?obs ?obsCountry ?currentlyPositive
+WHERE {
+	?obs			rdf:type						qb:Observation .
+  	?obs			qb:dataSet 					    cw-voc:dataset .
+ 	?obs			voc:refCountry					?obsCountry .
+ 	?obs			voc:refDate						?obsDate .
+ 	?obs			cw-voc:cumulative-positive		?cumulativePositive .
+ 	OPTIONAL { ?obs	cw-voc:cumulative-deceased		?cumulativeDeceased . }
+ 	OPTIONAL { ?obs	cw-voc:cumulative-recovered		?cumulativeRecovered . }
+  	?obs			cw-voc:currently-positive		?currentlyPositive .
+  	OPTIONAL { ?obs	cw-voc:hospitalized				?hospitalized . }
+  	OPTIONAL { ?obs	cw-voc:intensive-care			?intensiveCare . }
+
+    VALUES (?obsCountry) {
+      ( <http://www.example.org/covid-world/countries/CZE> )
+      ( <http://www.example.org/covid-world/countries/SVK> )
+      ( <http://www.example.org/covid-world/countries/POL> )
+      ( <http://www.example.org/covid-world/countries/DEU> )
+      ( <http://www.example.org/covid-world/countries/AUT> )
+  	}
+
+  	FILTER ( ?currentlyPositive > 100000 )
+}

@@ -30,7 +30,7 @@ $TARQL -e utf-8 --dedup 10000 "./life-satisfaction.sparql" > "${OUTPUT_DIR}/life
 # Covid world triplification
 # ==================================================
 
-$TARQL -e utf-8 --dedup 1500000 "./covid-world.sparql" > "${OUTPUT_DIR}/covid-world.ttl"
+$TARQL -e utf-8 --dedup 15000000 "./covid-world.sparql" > "${OUTPUT_DIR}/covid-world.ttl"
 
 # ==================================================
 # Covid CZE triplification

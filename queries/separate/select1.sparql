@@ -1,0 +1,23 @@
+# Select 10 countries with the highest life satisfaction for 2020 and life satisfaction value for each of these countries
+# Usage: FILTER
+
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX ls-voc: <http://www.example.org/life-satisfaction/vocabulary/>
+
+SELECT ?obsCountry ?obsVal
+WHERE {
+	?obs rdf:type qb:Observation ;
+        qb:dataSet   					    ls-voc:dataset ;
+		voc:refCountry						?obsCountry ;
+		voc:refYear							?obsYear ;
+		ls-voc:happiness-cantril-ladder		?obsVal .
+
+  	FILTER ( year(?obsYear) = 2020 )
+}
+ORDER BY DESC(?obsVal)
+LIMIT 10
