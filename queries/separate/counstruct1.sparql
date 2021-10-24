@@ -1,0 +1,28 @@
+# Construct currently positive cases number
+# Dataset: covid-cze
+# Usage: BIND
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX ccz-voc: <http://www.example.org/covid-cze/vocabulary/>
+
+CONSTRUCT {
+	?obs rdf:type qb:Observation ;
+    	voc:refKraj ?kraj ;
+    	voc:refOkres ?okres ;
+    	#voc:refDate ?obsDate ;
+  		ccz-voc:aktualni-pocet-nakazenych ?currentlyPos .
+}
+WHERE {
+	?obs rdf:type qb:Observation ;
+      	voc:refKraj ?kraj ;
+		voc:refOkres ?okres ;
+  		#voc:refDate ?obsDate ;
+      	ccz-voc:kumulativni-pocet-nakazenych ?cumulPos ;
+       	ccz-voc:kumulativni-pocet-vylecenych ?cumulRec ;
+        ccz-voc:kumulativni-pocet-umrti ?cumulDeceased .
+  	BIND ( (?cumulPos - ?cumulRec - ?cumulDeceased)  AS ?currentlyPos )
+}
+ORDER BY DESC(?obsDate)
+LIMIT 1000

@@ -1,11 +1,11 @@
 # Ask if there is some European country that reached 1 000 000 positive cases before the end of the 2020 except France
 # Dataset: covid-world
 # Usage: FILTER
+
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
-
 PREFIX voc: <http://www.example.org/vocabulary/>
 PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
 

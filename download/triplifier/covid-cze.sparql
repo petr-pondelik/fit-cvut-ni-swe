@@ -22,7 +22,7 @@ CONSTRUCT {
         qb:dataSet                                  ccz-voc:dataset ;
         voc:refKraj                                 ?kraj ;
         voc:refOkres                                ?okres ;
-        voc:refDate                                 ?datum ;
+        voc:refDate                                 ?a ;
         ccz-voc:kumulativni-pocet-nakazenych        ?kumulativniPocetNakazenychInt ;
         ccz-voc:kumulativni-pocet-vylecenych        ?kumulativniPocetVylecenychInt ;
         ccz-voc:kumulativni-pocet-umrti             ?kumulativniPocetUmrtiInt .
