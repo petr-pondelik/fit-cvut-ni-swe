@@ -1,4 +1,4 @@
-# Construct currently positive cases value
+# Construct currently positive cases value and sort the results from the newest
 # Dataset: covid-cze
 # Usage: BIND, IF
 # Note: IF clause is used to handle negative values of currently positive caused by data irregularities (e.g. 2021-10-20	CZ010	CZ0100	191570	190358	2785)
@@ -7,6 +7,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX voc: <http://www.example.org/vocabulary/>
 PREFIX ccz-voc: <http://www.example.org/covid-cze/vocabulary/>
+
 
 CONSTRUCT {
 	?obs rdf:type qb:Observation ;
@@ -29,4 +30,4 @@ WHERE {
     )
 }
 ORDER BY DESC(?obsDate)
-LIMIT 100
+LIMIT 100 # For performance purpose

@@ -1,0 +1,24 @@
+# Describe non-european country with the highest cumulative number of positive cases
+# Dataset: covid-world
+# Usage: FILTER
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+DESCRIBE ?country
+WHERE {
+	?obs rdf:type qb:Observation ;
+    	voc:refCountry ?country ;
+     	cw-voc:cumulative-positive ?cumulPos .
+
+  	?country rdf:type skos:Concept ;
+    	cw-voc:eu-country ?euCountry ;
+
+     FILTER (?euCountry = false)
+}
+ORDER BY DESC(?cumulPos)
+LIMIT 1

@@ -1,3 +1,24 @@
-# Construct life satisfaction average for each country
+# Construct life satisfaction average for each country and round it to 5 decimal places
 # Dataset: life-satisfaction
 # Usage: ---
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX ls-voc: <http://www.example.org/life-satisfaction/vocabulary/>
+PREFIX voc: <http://www.example.org/vocabulary/>
+
+
+CONSTRUCT {
+	?country ls-voc:happiness-cantril-ladder-avg ?lsAvg
+}
+WHERE {
+  {
+    SELECT ?country (ROUND(AVG(?lsVal)*100000000)/100000 AS ?lsAvg)
+  	WHERE {
+  		?obs rdf:type qb:Observation ;
+  			voc:refCountry ?country ;
+  			ls-voc:happiness-cantril-ladder ?lsVal .
+	}
+    GROUP BY ?country
+  }
+}

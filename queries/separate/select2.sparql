@@ -8,6 +8,7 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX voc: <http://www.example.org/vocabulary/>
 PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
 
+
 SELECT DISTINCT ?obs ?obsCountry ?currentlyPositive
 WHERE {
 	?obs			rdf:type						qb:Observation .

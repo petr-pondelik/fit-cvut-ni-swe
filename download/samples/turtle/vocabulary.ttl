@@ -50,23 +50,32 @@ ls-voc:happiness-cantril-ladder a rdf:Property, qb:MeasureProperty ;
 
 
 ########################################
+#   Other predicates
+########################################
+
+ls-voc:happiness-cantril-ladder-avg a rdf:Property ;
+    rdfs:label              "Average value for life satisfaction by Cantril Ladder happiness."@en ;
+    rdfs:range              xsd:double .
+
+
+########################################
 #   DataCube DataSet definition
 ########################################
 
 ls-voc:dataset-definition a qb:DataStructureDefinition ;
-          # The dimensions
-          qb:component [ qb:dimension voc:refCountry; qb:order 1 ] ;
-          qb:component [ qb:dimension voc:refYear; qb:order 2 ] ;
+    # The dimensions
+    qb:component [ qb:dimension voc:refCountry; qb:order 1 ] ;
+    qb:component [ qb:dimension voc:refYear; qb:order 2 ] ;
 
-          # The measure(s)
-          qb:component [ qb:measure ls-voc:happiness-cantril-ladder ] .
+    # The measure(s)
+    qb:component [ qb:measure ls-voc:happiness-cantril-ladder ] .
 
 
 # Publisher can be linked (https://www.w3.org/TR/vocab-data-cube/#metadata)
 ls-voc:dataset a qb:DataSet ;
-         rdfs:label      "Self-reported Life Satisfaction"@en ;
-         rdfs:comment    "Self-reported Life Satisfaction dataset, 2005 to 2020."@en ;
-         qb:structure    ls-voc:dataset-definition .
+    rdfs:label      "Self-reported Life Satisfaction"@en ;
+    rdfs:comment    "Self-reported Life Satisfaction dataset, 2005 to 2020."@en ;
+    qb:structure    ls-voc:dataset-definition .
 
 
 
@@ -204,6 +213,14 @@ ccz-voc:kumulativni-pocet-umrti a rdf:Property, qb:MeasureProperty ;
     rdfs:subPropertyOf      sdmx-measure:obsValue ;
     rdfs:range              xsd:integer .
 
+###################################################
+#   Other predicates
+###################################################
+
+ccz-voc:aktualni-pocet-nakazenych a rdf:Property ;
+    rdfs:label              "Aktuální počet nakažených k příslušnému datu."@cs ;
+    rdfs:range              xsd:integer .
+
 
 ###################################################
 #   DataCube DataSet definition
@@ -224,3 +241,4 @@ ccz-voc:dataset a qb:DataSet ;
     rdfs:label          "Statistiky pandemie Covid-19 v ČR."@cs ;
     rdfs:comment        "Datová sada obsahuje denní kumulativní statistiky pandemie COVID-19 pro ČR dle okresů."@cs ;
     qb:structure        ccz-voc:dataset-definition .
+
