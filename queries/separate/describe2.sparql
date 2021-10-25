@@ -1,0 +1,19 @@
+# Describe regions that are part of the south-west Czechia (from NUTS 2)
+# Dataset: ciselniky
+# Usage: VALUES
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dbp:  <http://dbpedia.org/property/>
+
+
+DESCRIBE ?kraj
+WHERE {
+	?kraj rdf:type skos:Concept ;
+		dbp:nuts ?nuts .
+
+  	VALUES (?nuts) {
+    	("CZ032")
+    	("CZ031")
+  	}
+}
