@@ -46,7 +46,7 @@
 		cw-voc:currently-positive		    16076 .
 
 # Sample 2
-<http://www.example.org/covid-world/countries/DNK/2020-08-28> a qb:Observation ;
+<http://www.example.org/covid-world/countries/DNK/2021-03-05> a qb:Observation ;
 		qb:dataSet 					        cw-voc:dataset ;
 		voc:refCountry 				        cw-countries:DNK ;
 		voc:refDate 					    "2021-03-05"^^xsd:date ;
@@ -58,7 +58,7 @@
 		cw-voc:intensive-care			    31 .
 
 # Sample 3
-<http://www.example.org/covid-world/countries/DNK/2020-08-28> a qb:Observation ;
+<http://www.example.org/covid-world/countries/DNK/2021-10-01> a qb:Observation ;
 		qb:dataSet 					        cw-voc:dataset ;
 		voc:refCountry 				        cw-countries:DNK ;
 		voc:refDate 					    "2021-10-01"^^xsd:date ;

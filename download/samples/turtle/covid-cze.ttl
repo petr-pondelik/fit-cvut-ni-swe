@@ -1,5 +1,4 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix qb:  <http://purl.org/linked-data/cube#> .
 @prefix dbp:  <http://dbpedia.org/property/> .
@@ -31,7 +30,7 @@
 <http://www.example.org/covid-cze/okresy/CZ0201/2020-12-10> a qb:Observation ;
 	qb:dataSet 								    ccz-voc:dataset ;
 	voc:refKraj								    ccz-kraje:CZ020 ;
-	voc:refOkres								ccz-kraje:CZ0201 ;
+	voc:refOkres								ccz-okresy:CZ0201 ;
 	voc:refDate                                 "2020-12-10"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		6985 ;
 	ccz-voc:kumulativni-pocet-vylecenych		6391 ;

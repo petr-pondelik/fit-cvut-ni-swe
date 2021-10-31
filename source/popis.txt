@@ -9,18 +9,18 @@ URL: https://data.europa.eu/data/datasets/covid-data-around-the-world?locale=en
 (Zdrojový soubor: https://github.com/ec-jrc/COVID-19/blob/master/data-of-world/jrc-covid-19-all-days-of-world.csv)
 Formát: CSV
 
-Dataset obsahuje informace o denních kumulativních statistickách (pozitivní, zemřelí, vyléčení, hospitalizovaní, hospitalizovaní na jednotce intenzivní péče) pandemie Covid-19 ve světě.
+Dataset obsahuje statistiky k onemocnění Covid-19 ve světě (pozitivní, zemřelí, vyléčení, aktuálně pozitivní, hospitalizovaní, hospitalizovaní na jednotce intenzivní péče).
 
 Popis dle zdroje:
 	Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC
 
 
-## 2) LS: Life Satisfiction
+## 2) LifeSatisfaction: Life Satisfiction
 Zdroj: Gallup World Poll surveys
 URL: https://ourworldindata.org/grapher/happiness-cantril-ladder
 Formát: CSV
 
-Dataset obsahuje hodnoty životní spokojenosti obyvatel jednotlivých zemích (získaných metodou Cantril Ladder) v jednotlivých letech.
+Dataset obsahuje hodnoty životní spokojenosti obyvatel pro jednotlivé země (získaných metodou Cantril Ladder) v jednotlivých letech.
 
 Popis dle zdroje:
 	Average of survey responses to the 'Cantril Ladder' question in the Gallup World Poll. The survey question asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0.
@@ -38,6 +38,7 @@ Popis dle zdroje:
 
 
 ## 4) Číselníky
+
 ### Kraje
 Zdroj: Ministerstvo zdravotnictví
 URL: https://data.gov.cz/datov%C3%A1-sada?iri=https%3A%2F%2Fdata.gov.cz%2Fzdroj%2Fdatov%C3%A9-sady%2Fhttps---opendata.mzcr.cz-api-3-action-package_show-id-ciselnik-kraju

@@ -1,6 +1,6 @@
 # Popis IRI patternů
 
-Veškeré zdroje jsou organizovány na abstraktní doméně http://www.example.org
+Veškeré zdroje jsou umístěny na abstraktní doméně http://www.example.org
 
 ## Třídy a predikáty
 * existují 4 kategorie slovníků
@@ -15,7 +15,7 @@ Veškeré zdroje jsou organizovány na abstraktní doméně http://www.example.o
 
 ### Číselníky
 
-Číselníky krajů a okresů jsou hierarchicky organizovány pod prefixem ciselniky/
+Číselníky krajů a okresů jsou organizovány pod prefixem ciselniky/
 * číselník krajů: http://www.example.org/ciselniky/kraje/
     * příklad: http://www.example.org/ciselniky/kraje/CZ020
 * číselník okresů: http://www.example.org/ciselniky/okresy/
@@ -31,7 +31,7 @@ Země jsou dostupné pod prefixem countries/
 * http://www.example.org/life-satisfaction/countries
     * příklad: http://www.example.org/life-satisfaction/countries/Finland
 
-Pozorování jsou organizovány dle země a roku pod IRI příslušné země.
+Pozorování jsou organizována pod jednotlivými zeměmi dle roku.
 * příklad: http://www.example.org/life-satisfaction/countries/Finland/2019
 
 ### Covid World

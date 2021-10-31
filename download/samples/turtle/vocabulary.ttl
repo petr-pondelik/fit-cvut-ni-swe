@@ -89,12 +89,12 @@ ls-voc:dataset a qb:DataSet ;
 
 # EU country flag predicate definition
 cw-voc:eu-country a rdf:Property ;
-    rdfs:label  "Flag attribute describing if the country is a member of EU."@en ;
+    rdfs:label  "Flag attribute specifying if the country is a member of EU."@en ;
     rdfs:range  xsd:boolean .
 
 # EUCPM country flag predicate definition
 cw-voc:eucpm-country a rdf:Property ;
-    rdfs:label  "Flag attribute describing if the country is a member of EU Civil Protection Mechanism."@en ;
+    rdfs:label  "Flag attribute specifying if the country is a member of EU Civil Protection Mechanism."@en ;
     rdfs:range  xsd:boolean .
 
 
