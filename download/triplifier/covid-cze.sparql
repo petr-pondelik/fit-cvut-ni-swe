@@ -12,15 +12,16 @@ PREFIX ccz-okresy: <http://www.example.org/covid-cze/okresy/>
 CONSTRUCT {
 
     ?kraj a skos:Concept ;
-        dbp:nuts        ?b .
+        dbp:nuts            ?b ;
+        skos:topConceptOf   ccz-voc:regiony .
 
     ?okres a skos:Concept ;
         dbp:nuts        ?c ;
-        skos:broader    ?kraj .
+        skos:broader    ?kraj ;
+        skos:inScheme   ccz-voc:regiony .
 
     ?covidCzeObs a qb:Observation ;
         qb:dataSet                                  ccz-voc:dataset ;
-        voc:refKraj                                 ?kraj ;
         voc:refOkres                                ?okres ;
         voc:refDate                                 ?obsDate ;
         ccz-voc:kumulativni-pocet-nakazenych        ?kumulativniPocetNakazenychInt ;

@@ -17,7 +17,9 @@
 
 <http://www.example.org/covid-world/continents/EU> a skos:Concept ;
 	rdfs:label	    "EU"@en ;
-	skos:prefLabel  "EU"@en .
+	skos:prefLabel  "EU"@en ;
+	skos:broader    cw-voc:world ;
+	skos:inScheme   cw-voc:world-regions .
 
 <http://www.example.org/covid-world/countries/DNK> a skos:Concept ;
     rdfs:label                  "Denmark"@en ;
@@ -29,7 +31,8 @@
 	dbp:lon 					11.617223 ;
 	cw-voc:eu-country			"true"^^xsd:boolean ;
 	cw-voc:eucpm-country  		"true"^^xsd:boolean ;
-	skos:broader				cw-continents:EU .
+	skos:broader				cw-continents:EU ;
+	skos:inScheme               cw-voc:world-regions .
 
 
 ###################################################

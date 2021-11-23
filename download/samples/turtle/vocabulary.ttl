@@ -1,6 +1,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
@@ -17,6 +18,14 @@
 ########################################################
 #                   LIFE SATISFACTION
 ########################################################
+
+
+########################################
+#   SKOS Schema predicates
+########################################
+
+ls-voc:countries a skos:ConceptScheme ;
+    dct:title              "Countries taxonomy." .
 
 
 ########################################
@@ -82,6 +91,20 @@ ls-voc:dataset a qb:DataSet ;
 ########################################################
 #                   COVID WORLD
 ########################################################
+
+
+########################################
+#   SKOS Schema predicates
+########################################
+
+cw-voc:world-regions a skos:ConceptScheme ;
+    dct:title              "World regions taxonomy." ;
+    skos:hasTopConcept     cw-voc:world .
+
+cw-voc:world a skos:Concept ;
+    skos:prefLabel          "World"@en ;
+    skos:topConceptOf       cw-voc:world-regions .
+
 
 ########################################
 #   Countries predicates
@@ -176,6 +199,14 @@ cw-voc:dataset a qb:DataSet ;
 
 
 ########################################
+#   SKOS Schema predicates
+########################################
+
+ccz-voc:regiony a skos:ConceptScheme ;
+    dct:title              "Regiony"@cs .
+
+
+########################################
 #   DataCube dimensions predicates
 ########################################
 
@@ -229,9 +260,8 @@ ccz-voc:aktualni-pocet-nakazenych a rdf:Property ;
 # DataSet structure definition
 ccz-voc:dataset-definition a qb:DataStructureDefinition ;
     # The dimensions
-    qb:component [ qb:dimension voc:refKraj; qb:order 1 ] ;
-    qb:component [ qb:dimension voc:refOkres; qb:order 2 ] ;
-    qb:component [ qb:dimension voc:refDate; qb:order 3 ] ;
+    qb:component [ qb:dimension voc:refOkres; qb:order 1 ] ;
+    qb:component [ qb:dimension voc:refDate; qb:order 2 ] ;
     # The measures(s)
     qb:component [ qb:measure ccz-voc:kumulativni-pocet-nakazenych ] ;
     qb:component [ qb:measure ccz-voc:kumulativni-pocet-vylecenych ] ;

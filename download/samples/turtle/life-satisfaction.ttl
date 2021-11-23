@@ -18,14 +18,15 @@
 	    rdfs:label	        "Finland"@en ;
         skos:prefLabel      "Finland"@en ;
         dbp:name            "Finland"@en ;
-        dbp:iso3166code     "FIN" .
-
+        dbp:iso3166code     "FIN" ;
+        skos:topConceptOf   ls-voc:regions .
 
 <http://www.example.org/life-satisfaction/countries/DNK> a skos:Concept ;
 	    rdfs:label	        "Denmark"@en ;
         skos:prefLabel      "Denmark"@en ;
         dbp:name            "Denmark"@en ;
-        dbp:iso3166code     "DNK" .
+        dbp:iso3166code     "DNK" ;
+        skos:topConceptOf   ls-voc:regions .
 
 
 ###################################################

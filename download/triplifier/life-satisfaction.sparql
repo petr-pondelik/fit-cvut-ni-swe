@@ -15,7 +15,8 @@ CONSTRUCT {
         rdfs:label          ?countryNameEn ;
         skos:prefLabel      ?countryNameEn ;
         dbp:name            ?countryNameEn ;
-        dbp:iso3166code     ?iso3166 .
+        dbp:iso3166code     ?iso3166 ;
+        skos:topConceptOf   ls-voc:countries .
 
     ?lifeSatisfactionObs a qb:Observation ;
         qb:dataSet                          ls-voc:dataset ;

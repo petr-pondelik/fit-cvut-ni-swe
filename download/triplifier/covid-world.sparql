@@ -14,7 +14,9 @@ CONSTRUCT {
 
     ?continent a skos:Concept ;
         rdfs:label          ?continentShortEn ;
-        skos:prefLabel      ?continentShortEn .
+        skos:prefLabel      ?continentShortEn ;
+        skos:broader        cw-voc:world ;
+        skos:inScheme       cw-voc:world-regions .
 
     ?country a skos:Concept ;
         rdfs:label              ?countryNameEn ;
@@ -26,7 +28,8 @@ CONSTRUCT {
         dbp:lon                 ?lonDec ;
         cw-voc:eu-country       ?euCountryBool ;
         cw-voc:eucpm-country    ?eucpmCountryBool ;
-        skos:broader            ?continent .
+        skos:broader            ?continent ;
+        skos:inScheme           cw-voc:world-regions .
 
     ?covidWorldObs a qb:Observation ;
         qb:dataSet 					        cw-voc:dataset ;

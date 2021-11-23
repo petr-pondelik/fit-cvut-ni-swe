@@ -15,11 +15,13 @@
 ###################################################
 
 <http://www.example.org/covid-cze/kraje/CZ020> a skos:Concept ;
-	dbp:nuts		"CZ020" .
+	dbp:nuts		    "CZ020" ;
+	skos:topConceptOf   ccz-voc:regiony .
 
 <http://www.example.org/covid-cze/okresy/CZ0201> a skos:Concept ;
 	dbp:nuts		"CZ0201" ;
-	skos:broader	ccz-kraje:CZ020 .
+	skos:broader	ccz-kraje:CZ020 ;
+	skos:inScheme   ccz-voc:regiony .
 
 
 ###################################################
@@ -29,7 +31,6 @@
 # Sample 1
 <http://www.example.org/covid-cze/okresy/CZ0201/2020-12-10> a qb:Observation ;
 	qb:dataSet 								    ccz-voc:dataset ;
-	voc:refKraj								    ccz-kraje:CZ020 ;
 	voc:refOkres								ccz-okresy:CZ0201 ;
 	voc:refDate                                 "2020-12-10"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		6985 ;
@@ -39,7 +40,6 @@
 # Sample 2
 <http://www.example.org/covid-cze/okresy/CZ0201/2021-05-13> a qb:Observation ;
 	qb:dataSet 								    ccz-voc:dataset ;
-	voc:refKraj								    ccz-kraje:CZ020 ;
 	voc:refOkres								ccz-okresy:CZ0201 ;
 	voc:refDate                                 "2021-05-13"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		18538 ;
@@ -49,7 +49,6 @@
 # Sample 3
 <http://www.example.org/covid-cze/okresy/CZ0201/2021-09-21> a qb:Observation ;
 	qb:dataSet 								    ccz-voc:dataset ;
-	voc:refKraj								    ccz-kraje:CZ020 ;
 	voc:refOkres								ccz-okresy:CZ0201 ;
 	voc:refDate                                 "2021-09-21"^^xsd:date ;
 	ccz-voc:kumulativni-pocet-nakazenych		18814 ;
