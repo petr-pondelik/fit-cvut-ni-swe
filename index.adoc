@@ -144,12 +144,20 @@ sudo docker run --name fuseki -p 3030:3030 -e ADMIN_PASSWORD=pw123 -v fuseki-dat
 
 == Linking and Queries 2: Combined
 
-=== Linking
+=== Run Silk Workbench as docker container
+
+Copy content of `/download/output` directory into `/linking/silk-volume/ni-swe-linking` directory.
+
+Move into `/linking/silk-volume` directory and run the following command.
+
+----
+sudo docker run -d --name silk-workbench -v $PWD:/root/.silk/workspace -p 80:80 silkframework/silk-workbench:latest
+----
+
+== Annotations
 
 Pro statistická data z EU: +
 https://op.europa.eu/en/web/eu-vocabularies/authority-tables
-
-== Annotations
 
 == SHACL
 
