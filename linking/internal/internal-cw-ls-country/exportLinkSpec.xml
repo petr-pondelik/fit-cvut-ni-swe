@@ -3,50 +3,50 @@
         <Prefix id="rdf" namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><Prefix id="rdfs" namespace="http://www.w3.org/2000/01/rdf-schema#"/><Prefix id="owl" namespace="http://www.w3.org/2002/07/owl#"/>
     </Prefixes>
     <DataSources>
-        <Dataset id="1okresy" type="file" uriProperty=""><MetaData>
+        <Dataset id="covid-world" type="file" uriProperty=""><MetaData>
             <Label></Label>
             <Description></Description>
 
         </MetaData>
-            <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[10]]></Param><Param name="file" xml:space="preserve"><![CDATA[1okresy.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
-        </Dataset><Dataset id="2auta" type="file" uriProperty=""><MetaData>
+            <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[covid-world.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+        </Dataset><Dataset id="life-satisfaction" type="file" uriProperty=""><MetaData>
         <Label></Label>
         <Description></Description>
 
     </MetaData>
-        <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[10]]></Param><Param name="file" xml:space="preserve"><![CDATA[2auta.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+        <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[life-satisfaction.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
     </Dataset>
     </DataSources>
     <Interlinks>
-        <Interlink id="internal-okres-reg"><MetaData>
+        <Interlink id="internal-cw-ls-country"><MetaData>
             <Label></Label>
             <Description></Description>
-            <Modified>2021-11-24T19:32:00.498Z</Modified>
+            <Modified>2021-11-25T09:59:35.062Z</Modified>
         </MetaData>
-            <SourceDataset dataSource="1okresy" var="a" typeUri="http://cs.dbpedia.org/page/Okres">
+            <SourceDataset dataSource="covid-world" var="a" typeUri="http://www.w3.org/2004/02/skos/core#Concept">
                 <RestrictTo>
 
                 </RestrictTo>
             </SourceDataset>
-            <TargetDataset dataSource="2auta" var="b" typeUri="http://cs.dbpedia.org/page/Okres">
+            <TargetDataset dataSource="life-satisfaction" var="b" typeUri="http://www.w3.org/2004/02/skos/core#Concept">
                 <RestrictTo>
 
                 </RestrictTo>
             </TargetDataset>
             <LinkageRule linkType="&lt;http://www.w3.org/2002/07/owl#sameAs&gt;">
-                <Compare id="levenshteinDistance1" required="false" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
-                    <TransformInput id="lowerCase2" function="lowerCase">
-                        <Input id="sourcePath1" path="/&lt;http://schema.org/name&gt;"/>
+                <Compare id="levenshteinDistance1" required="true" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
+                    <TransformInput id="lowerCase1" function="lowerCase">
+                        <Input id="sourcePath3" path="/&lt;http://dbpedia.org/property/iso3166code&gt;"/>
 
-                    </TransformInput><TransformInput id="lowerCase1" function="lowerCase">
-                    <Input id="targetPath1" path="/&lt;http://schema.org/name&gt;"/>
+                    </TransformInput><TransformInput id="lowerCase2" function="lowerCase">
+                    <Input id="targetPath1" path="/&lt;http://dbpedia.org/property/iso3166code&gt;"/>
 
                 </TransformInput><Param name="minChar" xml:space="preserve"><![CDATA[0]]></Param><Param name="maxChar" xml:space="preserve"><![CDATA[z]]></Param>
                 </Compare>
                 <Filter/>
             </LinkageRule>
             <Outputs>
-                <Output id="okres-reg-OUT"></Output>
+                <Output id="cw-ls-OUT"></Output>
             </Outputs>
         </Interlink>
     </Interlinks>
@@ -54,12 +54,12 @@
 
     </Transforms>
     <Outputs>
-        <Dataset id="okres-reg-OUT" type="file" uriProperty=""><MetaData>
+        <Dataset id="cw-ls-OUT" type="file" uriProperty=""><MetaData>
             <Label></Label>
             <Description></Description>
 
         </MetaData>
-            <Param name="format" xml:space="preserve"><![CDATA[N-Triples]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[10]]></Param><Param name="file" xml:space="preserve"><![CDATA[okres-reg-OUT]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+            <Param name="format" xml:space="preserve"><![CDATA[N-Triples]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[cw-ls-OUT.nt]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
         </Dataset>
     </Outputs>
 </Silk>
