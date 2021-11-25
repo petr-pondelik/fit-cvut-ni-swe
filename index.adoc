@@ -154,6 +154,13 @@ Move into `/linking/silk-volume` directory and run the following command.
 sudo docker run -d --name silk-workbench -v $PWD:/root/.silk/workspace -p 80:80 silkframework/silk-workbench:latest
 ----
 
+=== External linking
+
+Ideas:
+
+* Link internal country records to DBPedia country resources
+* Link internal country records to DBPedia pandemic by country resources
+
 == Annotations
 
 Pro statistická data z EU: +
