@@ -21,7 +21,7 @@
         <Interlink id="internal-cw-ls-country"><MetaData>
             <Label></Label>
             <Description></Description>
-            <Modified>2021-11-25T09:59:35.062Z</Modified>
+            <Modified>2021-11-25T18:54:33.281Z</Modified>
         </MetaData>
             <SourceDataset dataSource="covid-world" var="a" typeUri="http://www.w3.org/2004/02/skos/core#Concept">
                 <RestrictTo>
@@ -34,19 +34,19 @@
                 </RestrictTo>
             </TargetDataset>
             <LinkageRule linkType="&lt;http://www.w3.org/2002/07/owl#sameAs&gt;">
-                <Compare id="levenshteinDistance1" required="true" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
+                <Compare id="jaccard1" required="true" weight="1" metric="jaccard" threshold="0.5" indexing="true">
                     <TransformInput id="lowerCase1" function="lowerCase">
-                        <Input id="sourcePath3" path="/&lt;http://dbpedia.org/property/iso3166code&gt;"/>
+                        <Input id="sourcePath1" path="/&lt;http://www.w3.org/2004/02/skos/core#prefLabel&gt;"/>
 
                     </TransformInput><TransformInput id="lowerCase2" function="lowerCase">
-                    <Input id="targetPath1" path="/&lt;http://dbpedia.org/property/iso3166code&gt;"/>
+                    <Input id="targetPath1" path="/&lt;http://www.w3.org/2004/02/skos/core#prefLabel&gt;"/>
 
-                </TransformInput><Param name="minChar" xml:space="preserve"><![CDATA[0]]></Param><Param name="maxChar" xml:space="preserve"><![CDATA[z]]></Param>
+                </TransformInput>
                 </Compare>
                 <Filter/>
             </LinkageRule>
             <Outputs>
-                <Output id="cw-ls-OUT"></Output>
+                <Output id="cw-ls-country-OUT"></Output>
             </Outputs>
         </Interlink>
     </Interlinks>
@@ -54,12 +54,12 @@
 
     </Transforms>
     <Outputs>
-        <Dataset id="cw-ls-OUT" type="file" uriProperty=""><MetaData>
+        <Dataset id="cw-ls-country-OUT" type="file" uriProperty=""><MetaData>
             <Label></Label>
             <Description></Description>
 
         </MetaData>
-            <Param name="format" xml:space="preserve"><![CDATA[N-Triples]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[cw-ls-OUT.nt]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+            <Param name="format" xml:space="preserve"><![CDATA[N-Triples]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[cw-ls-country-OUT.nt]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
         </Dataset>
     </Outputs>
 </Silk>

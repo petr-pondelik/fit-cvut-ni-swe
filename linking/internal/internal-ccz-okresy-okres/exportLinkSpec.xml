@@ -1,0 +1,65 @@
+<Silk>
+    <Prefixes>
+        <Prefix id="rdf" namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><Prefix id="rdfs" namespace="http://www.w3.org/2000/01/rdf-schema#"/><Prefix id="owl" namespace="http://www.w3.org/2002/07/owl#"/>
+    </Prefixes>
+    <DataSources>
+        <Dataset id="covid-cze" type="file" uriProperty=""><MetaData>
+            <Label></Label>
+            <Description></Description>
+
+        </MetaData>
+            <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[covid-cze.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+        </Dataset><Dataset id="okresy" type="file" uriProperty=""><MetaData>
+        <Label></Label>
+        <Description></Description>
+
+    </MetaData>
+        <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[10]]></Param><Param name="file" xml:space="preserve"><![CDATA[okresy.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+    </Dataset>
+    </DataSources>
+    <Interlinks>
+        <Interlink id="internal-ccz-okresy-okres"><MetaData>
+            <Label></Label>
+            <Description></Description>
+            <Modified>2021-11-25T19:34:46.365Z</Modified>
+        </MetaData>
+            <SourceDataset dataSource="covid-cze" var="a" typeUri="http://www.w3.org/2004/02/skos/core#Concept">
+                <RestrictTo>
+
+                </RestrictTo>
+            </SourceDataset>
+            <TargetDataset dataSource="okresy" var="b" typeUri="http://www.w3.org/2004/02/skos/core#Concept">
+                <RestrictTo>
+
+                </RestrictTo>
+            </TargetDataset>
+            <LinkageRule linkType="&lt;http://www.w3.org/2002/07/owl#sameAs&gt;">
+                <Compare id="equality1" required="true" weight="1" metric="equality" threshold="0.0" indexing="true">
+                    <TransformInput id="lowerCase1" function="lowerCase">
+                        <Input id="sourcePath1" path="/&lt;http://dbpedia.org/property/nuts&gt;"/>
+
+                    </TransformInput><TransformInput id="lowerCase2" function="lowerCase">
+                    <Input id="targetPath1" path="/&lt;http://dbpedia.org/property/nuts&gt;"/>
+
+                </TransformInput>
+                </Compare>
+                <Filter/>
+            </LinkageRule>
+            <Outputs>
+                <Output id="ccz-okresy-okres-OUT"></Output>
+            </Outputs>
+        </Interlink>
+    </Interlinks>
+    <Transforms>
+
+    </Transforms>
+    <Outputs>
+        <Dataset id="ccz-okresy-okres-OUT" type="file" uriProperty=""><MetaData>
+            <Label></Label>
+            <Description></Description>
+
+        </MetaData>
+            <Param name="format" xml:space="preserve"><![CDATA[N-Triples]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[ccz-okresy-okres-OUT.nt]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+        </Dataset>
+    </Outputs>
+</Silk>

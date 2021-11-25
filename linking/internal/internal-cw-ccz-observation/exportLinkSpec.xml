@@ -1,0 +1,59 @@
+<Silk>
+    <Prefixes>
+        <Prefix id="rdf" namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><Prefix id="rdfs" namespace="http://www.w3.org/2000/01/rdf-schema#"/><Prefix id="owl" namespace="http://www.w3.org/2002/07/owl#"/>
+    </Prefixes>
+    <DataSources>
+        <Dataset id="covid-world" type="file" uriProperty=""><MetaData>
+            <Label></Label>
+            <Description></Description>
+
+        </MetaData>
+            <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[covid-world.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+        </Dataset><Dataset id="covid-cze" type="file" uriProperty=""><MetaData>
+        <Label></Label>
+        <Description></Description>
+
+    </MetaData>
+        <Param name="format" xml:space="preserve"><![CDATA[Turtle]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[covid-cze.ttl]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+    </Dataset>
+    </DataSources>
+    <Interlinks>
+        <Interlink id="internal-cw-ccz-observation"><MetaData>
+            <Label></Label>
+            <Description></Description>
+            <Modified>2021-11-25T19:23:16.279Z</Modified>
+        </MetaData>
+            <SourceDataset dataSource="covid-world" var="a" typeUri="http://purl.org/linked-data/cube#Observation">
+                <RestrictTo>
+
+                </RestrictTo>
+            </SourceDataset>
+            <TargetDataset dataSource="covid-cze" var="b" typeUri="http://purl.org/linked-data/cube#Observation">
+                <RestrictTo>
+                    ?a &lt;http://www.example.org/vocabulary/refOkres&gt; &lt;http://www.example.org/covid-cze/okresy/CZ0100&gt; .
+                </RestrictTo>
+            </TargetDataset>
+            <LinkageRule linkType="&lt;http://www.w3.org/2002/07/owl#sameAs&gt;">
+                <Compare id="date1" required="true" weight="1" metric="date" threshold="0.0" indexing="true">
+                    <Input id="sourcePath1" path="/&lt;http://www.example.org/vocabulary/refDate&gt;"/><Input id="targetPath1" path="/&lt;http://www.example.org/vocabulary/refDate&gt;"/>
+                </Compare>
+                <Filter/>
+            </LinkageRule>
+            <Outputs>
+                <Output id="cw-ccz-observation-OUT"></Output>
+            </Outputs>
+        </Interlink>
+    </Interlinks>
+    <Transforms>
+
+    </Transforms>
+    <Outputs>
+        <Dataset id="cw-ccz-observation-OUT" type="file" uriProperty=""><MetaData>
+            <Label></Label>
+            <Description></Description>
+
+        </MetaData>
+            <Param name="format" xml:space="preserve"><![CDATA[N-Triples]]></Param><Param name="maxReadSize" xml:space="preserve"><![CDATA[100]]></Param><Param name="file" xml:space="preserve"><![CDATA[cw-ccz-observation-OUT.nt]]></Param><Param name="graph" xml:space="preserve"><![CDATA[]]></Param><Param name="entityList" xml:space="preserve"><![CDATA[]]></Param>
+        </Dataset>
+    </Outputs>
+</Silk>
