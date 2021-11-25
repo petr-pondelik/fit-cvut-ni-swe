@@ -12,7 +12,7 @@ Formát: CSV
 Dataset obsahuje statistiky k onemocnění Covid-19 ve světě (pozitivní, zemřelí, vyléčení, aktuálně pozitivní, hospitalizovaní, hospitalizovaní na jednotce intenzivní péče).
 
 Popis dle zdroje:
-	Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC
+	Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC.
 
 
 ## 2) LifeSatisfaction: Life Satisfiction

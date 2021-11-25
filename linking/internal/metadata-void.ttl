@@ -1,0 +1,67 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wv: <http://vocab.org/waiver/terms/norms> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+
+@prefix : <http://www.example.org/catalog/void> .
+
+
+########################################################
+#                   DATASETS
+########################################################
+
+:life-satisfaction a void:Dataset ;
+    dcterms:title           "Self-reported Life Satisfaction, 2020"@en ;
+    dcterms:description     "Average of survey responses to the 'Cantril Ladder' question in the Gallup World Poll. The survey question asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0."@en ;
+    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
+    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
+    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
+    dcterms:source          <http://www.example.org/files/life-satisfaction.ttl> ;
+    dcterms:created         "2021-11-25"^^xsd:date ;
+    dcterms:modified        "2021-11-25"^^xsd:date ;
+    void:feature            <http://www.w3.org/ns/formats/Turtle> .
+
+:covid-world a void:Dataset ;
+    dcterms:title           "Covid Data around the world"@en ;
+    dcterms:description     "Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC."@en ;
+    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
+    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
+    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
+    dcterms:source          <http://www.example.org/files/covid-world.ttl> ;
+    dcterms:created         "2021-11-25"^^xsd:date ;
+    dcterms:modified        "2021-11-25"^^xsd:date ;
+    void:feature            <http://www.w3.org/ns/formats/Turtle> .
+
+
+########################################################
+#                   LINKSETS
+########################################################
+
+:internal-cw-ls-country a void:Linkset ;
+    dcterms:title           "Covid World countries to Life Satisfaction countries."@en ;
+    dcterms:description     "Linkset connecting countries from covid-world dataset to countries from life-satisfacton dataset."@en ;
+    void:target             :covid-world ;
+    void:target             :life-satisfaction ;
+    void:linkPredicate      owl:sameAs ;
+    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
+    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
+    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
+    dcterms:created         "2021-11-25"^^xsd:date ;
+    dcterms:modified        "2021-11-25"^^xsd:date ;
+    void:feature            <http://www.w3.org/ns/formats/N-Triples> .
+
+
+########################################################
+#               AUTHOR'S FOAF PROFILE
+########################################################
+
+<http://www.example.org/contacts/pondepe1> a foaf:Person ;
+    foaf:givenName "Petr" ;
+    foaf:familyName "Pondělík" ;
+    foaf:gender "Male"@en ;
+    foaf:schoolHomepage <https://fit.cvut.cz/> .
