@@ -14,10 +14,9 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT ?country (?currPos AS ?Positive_2021_01_01)
 WHERE {
-
   ?obs rdf:type qb:Observation ;
   	voc:refCountry ?country ;
-    voc:refDate ?date ;
+    voc:refDate "2021-01-01"^^xsd:date ;
     cw-voc:currently-positive ?currPos .
 
   ?country rdf:type skos:Concept ;
@@ -30,7 +29,7 @@ WHERE {
 
       ?cwObs rdf:type qb:Observation ;
            voc:refCountry ?cwCountry ;
-           voc:refDate ?cwDate ;
+           voc:refDate "2021-01-01"^^xsd:date ;
            cw-voc:currently-positive ?cwCurrPos .
 
       {
@@ -46,16 +45,10 @@ WHERE {
         ORDER BY DESC(?lsVal)
         LIMIT 1
       }
-
-      FILTER ( ?cwDate = "2021-01-01"^^xsd:date )
-
     }
   }
 
-  FILTER ( ?date = "2021-01-01"^^xsd:date )
   FILTER ( ?currPos < ?cwCurrPos )
   FILTER ( ?isEuCountry = true )
-
 }
-
 LIMIT 5

@@ -1,0 +1,61 @@
+# Select amount of cumulative deceased people for european countries with highest and lowest Human Development Index (HDI)
+# Datasets: covid-world, dbpedia
+# Linkset: cw-dbpedia-country
+
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX yago: <http://dbpedia.org/class/yago/>
+
+
+SELECT *
+WHERE {
+  {
+    SELECT ?dbpCountry ?dbpHDevInx ?totalDec
+    WHERE {
+
+        ?cwCountry <http://www.w3.org/2002/07/owl#sameAs> ?dbpCountry .
+
+      	  ?obs rdf:type qb:Observation ;
+            voc:refCountry ?cwCountry ;
+            voc:refDate "2021-01-01"^^xsd:date ;
+            cw-voc:cumulative-deceased ?totalDec .
+
+        SERVICE <http://dbpedia.org/sparql> {
+            ?dbpCountry rdf:type dbo:Country, yago:WikicatCountriesInEurope ;
+                dbo:humanDevelopmentIndex ?dbpHDevInx ;
+                dbo:populationTotal ?dbpPopulation .
+        }
+
+      	FILTER ( ?dbpPopulation > 5000000 )
+    }
+    ORDER BY DESC(?dbpHDevInx)
+    LIMIT 1
+  }
+  UNION
+  {
+    SELECT ?dbpCountry ?dbpHDevInx ?totalDec
+    WHERE {
+        ?cwCountry <http://www.w3.org/2002/07/owl#sameAs> ?dbpCountry .
+
+        ?obs rdf:type qb:Observation ;
+            voc:refCountry ?cwCountry ;
+            voc:refDate "2021-01-01"^^xsd:date ;
+            cw-voc:cumulative-deceased ?totalDec .
+
+        SERVICE <http://dbpedia.org/sparql> {
+            ?dbpCountry rdf:type dbo:Country, yago:WikicatCountriesInEurope ;
+                dbo:humanDevelopmentIndex ?dbpHDevInx ;
+                dbo:populationTotal ?dbpPopulation .
+        }
+
+      	FILTER ( ?dbpPopulation > 5000000 )
+    }
+    ORDER BY ASC(?dbpHDevInx)
+    LIMIT 1
+  }
+}
