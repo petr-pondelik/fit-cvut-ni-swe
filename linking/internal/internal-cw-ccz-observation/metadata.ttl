@@ -1,0 +1,20 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix : <http://www.example.org/catalog/void> .
+
+
+:cw-ccz-observation a void:Linkset ;
+    dcterms:title           "Covid World observation linked to Covid CZE observations restricted to Prague."@en ;
+    dcterms:description     "Linkset connecting observations from covid-world dataset to observations from covid-cze dataset. Observations from covid-cze were restricted only to Prague due to enormous number of generated links."@en ;
+    void:target             :covid-world ;
+    void:target             :covid-cze ;
+    void:linkPredicate      owl:sameAs ;
+    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
+    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
+    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
+    dcterms:created         "2021-11-25"^^xsd:date ;
+    dcterms:modified        "2021-11-25"^^xsd:date ;
+    void:feature            <http://www.w3.org/ns/formats/N-Triples> .

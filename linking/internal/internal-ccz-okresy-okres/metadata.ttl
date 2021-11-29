@@ -1,0 +1,20 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+@prefix : <http://www.example.org/catalog/void> .
+
+
+:ccz-okresy-okres a void:Linkset ;
+    dcterms:title           "Propojení okresů z Covid CZE a číselníku okresů."@cs ;
+    dcterms:description     "Linkset propojující okresy z datasetu covid-cze s okresy z číselníku okresů."@cs ;
+    void:target             :covid-cze ;
+    void:target             :okresy ;
+    void:linkPredicate      owl:sameAs ;
+    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
+    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
+    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
+    dcterms:created         "2021-11-25"^^xsd:date ;
+    dcterms:modified        "2021-11-25"^^xsd:date ;
+    void:feature            <http://www.w3.org/ns/formats/N-Triples> .

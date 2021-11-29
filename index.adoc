@@ -158,8 +158,21 @@ sudo docker run -d --name silk-workbench -v $PWD:/root/.silk/workspace -p 80:80 
 
 Ideas:
 
-* Link internal country records to DBPedia country resources
 * Link internal country records to DBPedia pandemic by country resources
+
+==== 1) Link internal country records to DBPedia country resources
+
+187 out of 220 countries from internal dataset linked to DBpedia.
+
+There are several criteria evaluated by Levenshtein distance used within the liking task. +
+The maximal value of these is used for linking:
+
+(internal -> dbpedia)
+
+* skos:prefLabel -> dbp:CommonName
+* skos:prefLabel -> dbp:conventionalLongName
+* skos:prefLabel -> rdfs:label
+* skos:prefLabel -> dbp:name
 
 == Annotations
 
