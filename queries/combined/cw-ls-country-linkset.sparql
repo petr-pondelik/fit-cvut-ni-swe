@@ -1,0 +1,61 @@
+# Select EU countries that had less positive cases on 1.1.2020 then the country with the highest life satisfaction for 2019
+# Datasets: covid-world, life-satisfaction
+# Linkset: cw-ls-country
+
+
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX voc: <http://www.example.org/vocabulary/>
+PREFIX ls-voc: <http://www.example.org/life-satisfaction/vocabulary/>
+PREFIX cw-voc: <http://www.example.org/covid-world/vocabulary/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+
+SELECT ?country (?currPos AS ?Positive_2021_01_01)
+WHERE {
+
+  ?obs rdf:type qb:Observation ;
+  	voc:refCountry ?country ;
+    voc:refDate ?date ;
+    cw-voc:currently-positive ?currPos .
+
+  ?country rdf:type skos:Concept ;
+  	cw-voc:eu-country ?isEuCountry .
+
+  {
+    SELECT ?cwCountry ?cwCurrPos
+    WHERE {
+      ?cwCountry <http://www.w3.org/2002/07/owl#sameAs> ?lsCountry .
+
+      ?cwObs rdf:type qb:Observation ;
+           voc:refCountry ?cwCountry ;
+           voc:refDate ?cwDate ;
+           cw-voc:currently-positive ?cwCurrPos .
+
+      {
+        SELECT ?lsCountry
+        WHERE {
+          ?obs rdf:type qb:Observation ;
+              voc:refCountry						?lsCountry ;
+              voc:refYear							?lsYear ;
+              ls-voc:happiness-cantril-ladder		?lsVal .
+
+          FILTER ( year(?lsYear) = 2020 )
+        }
+        ORDER BY DESC(?lsVal)
+        LIMIT 1
+      }
+
+      FILTER ( ?cwDate = "2021-01-01"^^xsd:date )
+
+    }
+  }
+
+  FILTER ( ?date = "2021-01-01"^^xsd:date )
+  FILTER ( ?currPos < ?cwCurrPos )
+  FILTER ( ?isEuCountry = true )
+
+}
+
+LIMIT 5
