@@ -8,7 +8,7 @@
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 
-@prefix : <http://www.example.org/catalog/void> .
+@prefix : <http://www.example.org/.well-known/void/dataset> .
 
 
 ########################################################
@@ -71,11 +71,15 @@
     void:feature            <http://www.w3.org/ns/formats/Turtle> .
 
 :dbpedia a void:Dataset ;
-    dcterms:title           "DBPedia"@cs ;
-    dcterms:description     "DBPedia dataset."@cs ;
+    dcterms:title           "DBPedia"@en ;
+    dcterms:description     "RDF data extracted from Wikipedia"@en ;
     dcterms:creator         <http://dbpedia.org> ;
     dcterms:publisher       <http://dbpedia.org> ;
-    dcterms:source          <http://dbpedia.org/resource> .
+    dcterms:contributor     <https://www.fu-berlin.de> ;
+    dcterms:contributor     <https://www.uni-leipzig.de> ;
+    dcterms:contributor     <https://www.openlinksw.com> ;
+    dcterms:contributor     <https://www.dbpedia.org/community> ;
+    dcterms:source          <http://dbpedia.org/resource/Wikipedia> .
 
 
 ########################################################

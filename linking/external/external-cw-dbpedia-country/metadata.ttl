@@ -3,7 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-@prefix : <http://www.example.org/catalog/void> .
+@prefix : <http://www.example.org/.well-known/void/linkset> .
 
 
 :cw-dbpedia-country a void:Linkset ;
