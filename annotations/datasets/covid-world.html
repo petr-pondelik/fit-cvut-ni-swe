@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html
+        prefix="qb: http://purl.org/linked-data/cube#
+                voc: http://www.example.org/vocabulary/
+                cw-voc: http://www.example.org/covid-world/vocabulary/
+                cw-countries: http://www.example.org/covid-world/countries/"
+        lang="en"
+>
+<head>
+    <title>COVID infection data (DEU, 2021-02-12)</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<main about="http://www.example.org/covid-world/countries/DEU/2021-02-12" typeof="qb:Observation">
+    <a href="http://www.example.org/covid-world/countries/DEU">Back to country</a>
+    <h1>HCOVID infection data (DEU, 2021-02-12)</h1>
+    <dl>
+        <dt>Dataset</dt>
+        <dd>
+            <a rel="qb:dataSet" href="http://www.example.org/covid-world/vocabulary/dataset">
+                Dataset description
+            </a>
+        </dd>
+        <dt>Country</dt>
+        <dd>
+            <a rel="voc:refCountry" href="http://www.example.org/covid-world/countries/DEU">DEU</a>
+        </dd>
+        <dt>Date</dt>
+        <dd property="voc:refDate" datatype="xsd:date">2021-02-12</dd>
+        <dt>Cumulative positive</dt>
+        <dd property="cw-voc:cumulative-positive" datatype="xsd:integer">2320093</dd>
+        <dt>Cumulative deceased</dt>
+        <dd property="cw-voc:cumulative-deceased" datatype="xsd:integer">64191</dd>
+        <dt>Cumulative recovered</dt>
+        <dd property="cw-voc:cumulative-recovered" datatype="xsd:integer">2112000</dd>
+        <dt>Currently positive</dt>
+        <dd property="cw-voc:currently-positive" datatype="xsd:integer">143902</dd>
+    </dl>
+</main>
+</body>
+</html>
+
+<!-- Original RDF -->
+<!--<http://www.example.org/covid-world/countries/DEU/2021-02-12>-->
+<!--rdf:type                     qb:Observation ;-->
+<!--qb:dataSet                   cw-voc:dataset ;-->
+<!--voc:refCountry               cw-countries:DEU ;-->
+<!--voc:refDate                  "2021-02-12"^^xsd:date ;-->
+<!--cw-voc:cumulative-positive   2320093 ;-->
+<!--cw-voc:cumulative-deceased   64191 ;-->
+<!--cw-voc:cumulative-recovered  2112000 ;-->
+<!--cw-voc:currently-positive    143902 .-->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html
+        prefix="qb: http://purl.org/linked-data/cube#
+                voc: http://www.example.org/vocabulary/
+                ls-voc: http://www.example.org/life-satisfaction/vocabulary/
+                ls-countries: http://www.example.org/life-satisfaction/countries/"
+        lang="en"
+>
+<head>
+    <title>Life satisfaction: CZE 2020</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <main about="http://www.example.org/life-satisfaction/countries/CZE/2020" typeof="qb:Observation">
+        <a href="http://www.example.org/life-satisfaction/countries/CZE">Back to country</a>
+        <h1>Life satisfaction: CZE 2020</h1>
+        <dl>
+            <dt>Dataset</dt>
+            <dd>
+                <a rel="qb:dataSet" href="http://www.example.org/life-satisfaction/vocabulary/dataset">
+                    Dataset description
+                </a>
+            </dd>
+            <dt>Country</dt>
+            <dd>
+                <a rel="voc:refCountry" href="http://www.example.org/life-satisfaction/countries/CZE">CZE</a>
+            </dd>
+            <dt>Year</dt>
+            <dd property="voc:refYear" datatype="xsd:gYear">2020</dd>
+            <dt>Happiness value</dt>
+            <dd property="ls-voc:happiness-cantril-ladder" datatype="xsd:decimal">6.897</dd>
+        </dl>
+    </main>
+</body>
+</html>
+
+<!-- Original RDF -->
+<!--<http://www.example.org/life-satisfaction/countries/CZE/2020>-->
+<!--rdf:type        qb:Observation ;-->
+<!--qb:dataSet      ls-voc:dataset ;-->
+<!--voc:refCountry  ls-countries:CZE ;-->
+<!--voc:refYear     "2020"^^xsd:gYear ;-->
+<!--ls-voc:happiness-cantril-ladder  6.897 .-->

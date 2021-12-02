@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html
+        prefix="qb: http://purl.org/linked-data/cube#
+                voc: http://www.example.org/vocabulary/
+                ccz-voc: http://www.example.org/covid-cze/vocabulary/
+                ccz-okresy:  http://www.example.org/covid-cze/okresy/"
+        lang="cs"
+>
+<head>
+    <title>Hlášení krajské hygienické stanice pro okres CZ0100 (2021-05-20)</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<main about="http://www.example.org/covid-cze/okresy/CZ0100/2021-05-20" typeof="qb:Observation">
+    <a href="http://www.example.org/covid-cze/okresy/CZ0100">Zpět na okres</a>
+    <h1>Hlášení krajské hygienické stanice pro okres CZ0100 (2021-05-20)</h1>
+    <dl>
+        <dt>Datová sada</dt>
+        <dd>
+            <a rel="qb:dataSet" href="http://www.example.org/covid-cze/vocabulary/dataset">
+                Popis
+            </a>
+        </dd>
+        <dt>Okres</dt>
+        <dd>
+            <a rel="voc:refOkres" href="http://www.example.org/covid-cze/okresy/CZ0100">CZ0100</a>
+        </dd>
+        <dt>Datum</dt>
+        <dd property="voc:refDate" datatype="xsd:date">2021-05-20</dd>
+        <dt>Kumulativní počet nakažených</dt>
+        <dd property="ccz-voc:kumulativni-pocet-nakazenych" datatype="xsd:integer">180022</dd>
+        <dt>Kumulativní počet vyléčených</dt>
+        <dd property="ccz-voc:kumulativni-pocet-vylecenych" datatype="xsd:integer">180867</dd>
+        <dt>Kumulativní počet úmrtí</dt>
+        <dd property="ccz-voc:kumulativni-pocet-umrti" datatype="xsd:integer">2750</dd>
+    </dl>
+</main>
+</body>
+</html>
+
+
+<!-- Original RDF -->
+<!--<http://www.example.org/covid-cze/okresy/CZ0100/2021-05-20>-->
+<!--rdf:type      qb:Observation ;-->
+<!--qb:dataSet    ccz-voc:dataset ;-->
+<!--voc:refOkres  ccz-okresy:CZ0100 ;-->
+<!--voc:refDate   "2021-05-20"^^xsd:date ;-->
+<!--ccz-voc:kumulativni-pocet-nakazenych  180022 ;-->
+<!--ccz-voc:kumulativni-pocet-vylecenych  180867 ;-->
+<!--ccz-voc:kumulativni-pocet-umrti  2750 .-->
