@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html
+        prefix="skos: http://www.w3.org/2004/02/skos/core#
+                cw-voc: http://www.example.org/covid-world/vocabulary/
+                cw-continents: http://www.example.org/covid-world/continents/
+                dbp: http://dbpedia.org/property/"
+        lang="en"
+>
+<style>
+    th, td {
+        border: 1px solid black;
+        padding: 0.5em;
+    }
+</style>
+<head>
+    <title>Germany</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <main about="http://www.example.org/covid-world/countries/DEU/" typeof="skos:Concept">
+        <h1 property="rdfs:label skos:prefLabel dbp:name">Germany</h1>
+        <section>
+            <h2>Geographical information</h2>
+            <table>
+                <tr>
+                    <th>Continent</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
+                <tr>
+                    <td><a rel="skos:broader" href="http://www.example.org/covid-world/continents/EU">EU</a></td>
+                    <td property="dbp:lan" datatype="xsd:decimal">51.165706</td>
+                    <td property="dbp:lon" datatype="xsd:decimal">10.452764</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>Political information</h2>
+            <table>
+                <tr>
+                    <th>iso3166code</th>
+                    <th>NUTS</th>
+                    <th>EU member</th>
+                    <th>EUCPM member</th>
+                </tr>
+                <tr>
+                    <td property="dbp:iso3166code" datatype="xsd:string">DEU</td>
+                    <td property="dbp:nuts" datatype="xsd:string">DE</td>
+                    <td property="cw-voc:eu-country" datatype="xsd:boolean">true</td>
+                    <td property="cw-voc:eucpm-country" datatype="xsd:boolean">true</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>Schema</h2>
+            Schema definition: <a rel="skos:inScheme" href="http://www.example.org/covid-world/vocabulary/world-regions">World regions</a>
+        </section>
+    </main>
+</body>
+
+<!-- Original RDF -->
+<!--cw-countries:DEU  rdf:type    skos:Concept ;-->
+<!--rdfs:label            "Germany"@en ;-->
+<!--skos:prefLabel        "Germany"@en ;-->
+<!--dbp:name              "Germany"@en ;-->
+<!--dbp:iso3166code       "DEU" ;-->
+<!--dbp:nuts              "DE" ;-->
+<!--dbp:lat               51.165706 ;-->
+<!--dbp:lon               10.452764 ;-->
+<!--cw-voc:eu-country     true ;-->
+<!--cw-voc:eucpm-country  true ;-->
+<!--skos:broader          cw-continents:EU ;-->
+<!--skos:inScheme         cw-voc:world-regions .-->
