@@ -1,0 +1,26 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+@prefix voc: <http://www.example.org/vocabulary/> .
+@prefix ls-voc:  <http://www.example.org/life-satisfaction/vocabulary/> .
+@prefix ls-countries:  <http://www.example.org/life-satisfaction/countries/> .
+
+
+ls-countries:FIN  rdf:type  skos:Concept ;
+        rdfs:label         "Finland"@en ;
+        skos:prefLabel     "Finland"@en ;
+        dbp:name           "Finland"@en ;
+        dbp:iso3166code    "FIN" ;
+        skos:topConceptOf  ls-voc:countries .
+
+
+<http://www.example.org/life-satisfaction/countries/FIN/2019> a qb:Observation ;
+        qb:dataSet                                  ls-voc:dataset ;
+        voc:refCountry                              ls-countries:FIN ;
+        voc:refYear                                 "2019"^^xsd:gYear ;
+        ls-voc:happiness-cantril-ladder             7.78 .
+

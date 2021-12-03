@@ -5,7 +5,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix ls-countries:  <http://www.example.org/life-satisfaction/countries/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix voc:  <http://www.example.org/vocabulary/> .
 
 ls-countries:AFG  rdf:type  skos:Concept ;

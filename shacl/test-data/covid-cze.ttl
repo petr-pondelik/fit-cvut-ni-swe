@@ -1,0 +1,15 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+
+@prefix voc: <http://www.example.org/vocabulary/> .
+@prefix ccz-voc: <http://www.example.org/covid-cze/vocabulary/> .
+@prefix ccz-okresy: <http://www.example.org/covid-cze/okresy/> .
+
+
+<http://www.example.org/covid-cze/okresy/CZ0201/2020-12-10> a qb:Observation ;
+	qb:dataSet 								    ccz-voc:dataset ;
+	voc:refOkres								ccz-okresy:CZ0201 ;
+	voc:refDate                                 "2020-12-10"^^xsd:date ;
+	ccz-voc:kumulativni-pocet-nakazenych		6985 ;
+	ccz-voc:kumulativni-pocet-vylecenych		6391 ;
+	ccz-voc:kumulativni-pocet-umrti			    143 .
