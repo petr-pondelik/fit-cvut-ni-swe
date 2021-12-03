@@ -1,0 +1,23 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix ex: <http://www.example.org/> .
+
+
+<http://www.example.org/source/dataset/covid-cze> a dcat:Dataset ;
+    dcterms:title                   "Přehled epidemiologické situace dle hlášení krajských hygienických stanic podle okresu"@cs ;
+    dcterms:description             "Datová sada podle krajů a okresů ČR obsahující kumulativní denní počty osob s prokázaným onemocněním COVID-19 dle validovaných hlášení krajských hygienických stanic, kumulativní denní počty vyléčených po onemocnění COVID-19 dle hlášení krajských hygienických stanic a kumulativní denní počty úmrtí v souvislosti s onemocněním COVID-19 dle hlášení krajských hygienických stanic a hospitalizačních úmrtí."@cs ;
+    dcat:keyword                    "Covid"@cs, "Česko"@cs, "hlášení"@cs ;
+    dcat:theme                      <http://publications.europa.eu/resource/authority/data-theme/HEAL> ;
+    dcterms:accrualPeriodicity      <http://publications.europa.eu/resource/authority/frequency/DAILY> ;
+    dcterms:publisher               <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341>, <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00023833> ; # Not found in publications.europa.eu/resource/authority/corporate-body
+    dcat:distribution               <http://www.example.org/source/dataset/covid-cze/distribution/1> ;
+    foaf:page                       ex:covid-world .
+
+<http://www.example.org/source/dataset/covid-cze/distribution/1> a dcat:Distribution ;
+    dcterms:format                  <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+    dcterms:title                   "Přehled epidemiologické situace dle hlášení krajských hygienických stanic podle okresu"@cs ;
+    dcat:accessURL                  <http://www.example.org/files/covid-cze/covid-cze.ttl> ;
+    dcat:downloadURL                <http://www.example.org/files/covid-cze/covid-cze.ttl>> ;
+    dcat:mediaType                  <http://www.iana.org/assignments/media-types/text/turtle> .

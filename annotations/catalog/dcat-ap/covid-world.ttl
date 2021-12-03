@@ -1,0 +1,23 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix ex: <http://www.example.org/> .
+
+
+<http://www.example.org/source/dataset/covid-world> a dcat:Dataset ;
+    dcterms:title                   "Covid Data around the world"@en ;
+    dcterms:description             "Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC."@en ;
+    dcat:keyword                    "Covid"@en, "World"@en, "Daily"@en ;
+    dcat:theme                      <http://publications.europa.eu/resource/authority/data-theme/HEAL> ;
+    dcterms:accrualPeriodicity      <http://publications.europa.eu/resource/authority/frequency/CONT> ;
+    dcterms:publisher               <http://publications.europa.eu/resource/authority/corporate-body/JRC> ;
+    dcat:distribution               <http://www.example.org/source/dataset/covid-world/distribution/1> ;
+    foaf:page                       ex:covid-world .
+
+<http://www.example.org/source/dataset/covid-world/distribution/1> a dcat:Distribution ;
+    dcterms:format                  <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+    dcterms:title                   "Covid Data around the world"@en ;
+    dcat:accessURL                  <http://www.example.org/files/covid-world/covid-world.ttl> ;
+    dcat:downloadURL                <http://www.example.org/files/covid-world/covid-world.ttl> ;
+    dcat:mediaType                  <http://www.iana.org/assignments/media-types/text/turtle> .

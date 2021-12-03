@@ -1,0 +1,23 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+@prefix ex: <http://www.example.org/> .
+
+
+<http://www.example.org/source/dataset/life-satisfaction> a dcat:Dataset ;
+    dcterms:title                   "Self-reported Life Satisfaction"@en ;
+    dcterms:description             "Average of survey responses to the 'Cantril Ladder' question in the Gallup World Poll. The survey question asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0."@en ;
+    dcat:keyword                    "Survey"@en, "Life"@en, "Satisfaction"@en ;
+    dcat:theme                      <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
+    dcterms:accrualPeriodicity      <http://publications.europa.eu/resource/authority/frequency/ANNUAL> ;
+    dcterms:publisher               <https://dbpedia.org/resource/World_Happiness_Report> ; # Not found in publications.europa.eu/resource/authority/corporate-body
+    dcat:distribution               <http://www.example.org/source/dataset/life-satisfaction/distribution/1> ;
+    foaf:page                       ex:life-satisfaction .
+
+<http://www.example.org/source/dataset/life-satisfaction/distribution/1> a dcat:Distribution ;
+    dcterms:format                  <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+    dcterms:title                   "Self-reported Life Satisfaction"@en ;
+    dcat:accessURL                  <http://www.example.org/files/life-satisfaction/life-satisfaction.ttl> ;
+    dcat:downloadURL                <http://www.example.org/files/life-satisfaction/life-satisfaction.ttl> ;
+    dcat:mediaType                  <http://www.iana.org/assignments/media-types/text/turtle> .

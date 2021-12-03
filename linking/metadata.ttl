@@ -16,12 +16,12 @@
 ########################################################
 
 :life-satisfaction a void:Dataset ;
-    dcterms:title           "Self-reported Life Satisfaction, 2020"@en ;
+    dcterms:title           "Self-reported Life Satisfaction"@en ;
     dcterms:description     "Average of survey responses to the 'Cantril Ladder' question in the Gallup World Poll. The survey question asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0."@en ;
-    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
-    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
-    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
-    dcterms:source          <http://www.example.org/files/life-satisfaction.ttl> ;
+    dcterms:creator         <http://www.example.org/vocabulary/united-nations-sustainable-development-solutions-network>, <https://dbpedia.org/resource/University_of_Oxford> ;
+    dcterms:publisher       <http://www.example.org/vocabulary/united-nations-sustainable-development-solutions-network>, <https://dbpedia.org/resource/University_of_Oxford> ;
+    dcterms:contributor     <http://www.example.org/vocabulary/united-nations-sustainable-development-solutions-network>, <https://dbpedia.org/resource/University_of_Oxford> ;
+    dcterms:source          <https://dbpedia.org/resource/World_Happiness_Report> ;
     dcterms:created         "2021-11-25"^^xsd:date ;
     dcterms:modified        "2021-11-25"^^xsd:date ;
     void:feature            <http://www.w3.org/ns/formats/Turtle> .
@@ -29,10 +29,10 @@
 :covid-world a void:Dataset ;
     dcterms:title           "Covid Data around the world"@en ;
     dcterms:description     "Day by day and all days data related to COVID infection (Positive, Deceased, Recovered, Hospitalized, Intensive Care) for the world countries: data are from national agencies or from ECDC."@en ;
-    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
-    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
-    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
-    dcterms:source          <http://www.example.org/files/covid-world.ttl> ;
+    dcterms:creator         <http://publications.europa.eu/resource/authority/corporate-body/JRC> ;
+    dcterms:publisher       <http://publications.europa.eu/resource/authority/corporate-body/JRC> ;
+    dcterms:contributor     <http://publications.europa.eu/resource/authority/corporate-body/JRC> ;
+    dcterms:source          <https://dbpedia.org/page/Joint_Research_Centre> ;
     dcterms:created         "2021-11-25"^^xsd:date ;
     dcterms:modified        "2021-11-25"^^xsd:date ;
     void:feature            <http://www.w3.org/ns/formats/Turtle> .
@@ -40,10 +40,10 @@
 :covid-cze a void:Dataset ;
     dcterms:title           "Přehled epidemiologické situace dle hlášení krajských hygienických stanic podle okresu"@cs ;
     dcterms:description     "Datová sada podle krajů a okresů ČR obsahující kumulativní denní počty osob s prokázaným onemocněním COVID-19 dle validovaných hlášení krajských hygienických stanic, kumulativní denní počty vyléčených po onemocnění COVID-19 dle hlášení krajských hygienických stanic a kumulativní denní počty úmrtí v souvislosti s onemocněním COVID-19 dle hlášení krajských hygienických stanic a hospitalizačních úmrtí."@cs ;
-    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
-    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
-    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
-    dcterms:source          <http://www.example.org/files/covid-cze.ttl> ;
+    dcterms:creator         <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341>, <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00023833> ;
+    dcterms:publisher       <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341>, <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00023833> ;
+    dcterms:contributor     <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341>, <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00023833> ;
+    dcterms:source          <http://www.example.org/vocabulary/onemocneni-aktualne> ;
     dcterms:created         "2021-11-25"^^xsd:date ;
     dcterms:modified        "2021-11-25"^^xsd:date ;
     void:feature            <http://www.w3.org/ns/formats/Turtle> .
@@ -51,10 +51,10 @@
 :kraje a void:Dataset ;
     dcterms:title           "Kraje"@cs ;
     dcterms:description     "Číselník krajů"@cs ;
-    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
-    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
-    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
-    dcterms:source          <http://www.example.org/files/kraje.ttl> ;
+    dcterms:creator         <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341> ;
+    dcterms:publisher       <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341> ;
+    dcterms:contributor     <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341> ;
+    dcterms:source          <http://www.example.org/vocabulary/portal-otevrenych-dat> ;
     dcterms:created         "2021-11-25"^^xsd:date ;
     dcterms:modified        "2021-11-25"^^xsd:date ;
     void:feature            <http://www.w3.org/ns/formats/Turtle> .
@@ -62,10 +62,10 @@
 :okresy a void:Dataset ;
     dcterms:title           "Okresy"@cs ;
     dcterms:description     "Číselník okresů"@cs ;
-    dcterms:creator         <http://www.example.org/contacts/pondepe1> ;
-    dcterms:publisher       <http://www.example.org/contacts/pondepe1> ;
-    dcterms:contributor     <http://www.example.org/contacts/pondepe1> ;
-    dcterms:source          <http://www.example.org/files/okresy.ttl> ;
+    dcterms:creator         <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341> ;
+    dcterms:publisher       <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341> ;
+    dcterms:contributor     <https://rpp-opendata.egon.gov.cz/odrpp/zdroj/org%C3%A1n-ve%C5%99ejn%C3%A9-moci/00024341> ;
+    dcterms:source          <http://www.example.org/vocabulary/portal-otevrenych-dat> ;
     dcterms:created         "2021-11-25"^^xsd:date ;
     dcterms:modified        "2021-11-25"^^xsd:date ;
     void:feature            <http://www.w3.org/ns/formats/Turtle> .
@@ -83,11 +83,17 @@
 
 
 ########################################################
-#               AUTHOR'S FOAF PROFILE
+#               SOURCES FOAF PROFILES
 ########################################################
 
-<http://www.example.org/contacts/pondepe1> a foaf:Person ;
-    foaf:givenName "Petr" ;
-    foaf:familyName "Pondělík" ;
-    foaf:gender "Male"@en ;
-    foaf:schoolHomepage <https://fit.cvut.cz/> .
+<http://www.example.org/vocabulary/united-nations-sustainable-development-solutions-network> a foaf:Organisation ;
+    rdfs:label      "United Nations Sustainable Development Solutions Network"@en ;
+    foaf:homepage   <https://www.unsdsn.org/> .
+
+<http://www.example.org/vocabulary/onemocneni-aktualne> a foaf:Organisation ;
+    rdfs:label      "COVID-19 v ČR: Otevřené datové sady a sady ke stažení"@cs ;
+    foaf:homepage   <https://onemocneni-aktualne.mzcr.cz> .
+
+<http://www.example.org/vocabulary/portal-otevrenych-dat> a foaf:Organisation ;
+    rdfs:label      "Portál otevřených dat"@cs ;
+    foaf:homepage   <https://data.gov.cz> .
