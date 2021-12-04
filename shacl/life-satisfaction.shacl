@@ -26,29 +26,31 @@
 :iso3166codeDataTypeShape a sh:PropertyShape ;
 	sh:targetObjectsOf	dbp:iso3166code ;
 	sh:datatype			xsd:string ;
-	sh:message			"iso3166code has to be string."@en .
+	sh:message			"iso3166code has to be string."@en ;
+	sh:description		"Type validation for subjects of dbp:iso3166code."@en .
+
 
 :iso3166codeFormatShape a sh:PropertyShape ;
 	sh:targetObjectsOf	dbp:iso3166code ;
-	sh:pattern "^([A-z]{3}|OWID_[A-z]{3})$" ;
-    sh:flags "i" ;
-	sh:severity sh:Warning .
+	sh:pattern 			"^([A-z]{3}|OWID_[A-z]{3})$" ;
+    sh:flags 			"i" ;
+	sh:severity 		sh:Warning ;
+	sh:message			"Invalid format of iso3166code subject."@en ;
+	sh:description		"Format validation for subjects of dbp:iso3166code. iso3166code should have XXX or OWID_XXX format, where X is english alphabet symbol."@en .
 
 
 :labelShape a sh:NodeShape ;
 	sh:path				rdfs:label ;
-	sh:languageIn		( "en" ) ;
 	sh:minCount 		1 ;
-	sh:maxCount 		1 ;
-	sh:message 			"Exactly one english label required."@en .
+	sh:message 			"At least one rdfs:label required."@en ;
+	sh:description		"Validation for subjects of rdfs:label. There should be at least one rdfs:label."@en .
 
 
 :prefLabelShape a sh:NodeShape ;
 	sh:path				skos:prefLabel ;
-	sh:languageIn		( "en" ) ;
 	sh:minCount			1 ;
-	sh:maxCount 		1 ;
-	sh:message			"Exactly one english prefLabel required."@en .
+	sh:message			"At least one skos:prefLabel required."@en ;
+	sh:description		"Validation for subjects of skos:prefLabel. There should be at least one skos:prefLabel."@en .
 
 
 :concept-shape a sh:NodeShape ;
@@ -58,33 +60,41 @@
       		:labelShape
       		:prefLabelShape
     	) ;
-		sh:message "English label or prefLabel required."@en ;
+		sh:message 		"At least on of rdfs:label or skos:prefLabel required."@en ;
+        sh:description	"Concept labels shape. Concept must have at least one label."@en
     ] ;
 	sh:property [
     	sh:path rdfs:label ;
         sh:equals dbp:name ;
-        sh:message "Name should be same as label." ;
-        sh:severity sh:Info
+        sh:severity sh:Info ;
+		sh:message 		"dbp:name should be same as rdfs:label."@en ;
+        sh:description	"Recommendation to keep rdfs:label and dbp:name same for concepts."@en
     ] .
 
 
 :ref-country-shape a sh:NodeShape ;
 	sh:targetObjectsOf 	voc:refCountry ;
-	sh:nodeKind 		sh:IRI .
+	sh:nodeKind 		sh:IRI ;
+	sh:message			"voc:refCountry must be IRI."@en ;
+	sh:description		"Subject of voc:refCountry has to be IRI kind of node."@en .
 
 
 :observation-shape a sh:NodeShape ;
-	sh:targetClass		qb:Observation ;
+	sh:targetClass			qb:Observation ;
 	sh:property [
-    	sh:path ls-voc:happiness-cantril-ladder ;
-        sh:datatype xsd:decimal ;
-        sh:minInclusive 0 ;
-        sh:maxInclusive 10 ;
+    	sh:path 			ls-voc:happiness-cantril-ladder ;
+        sh:datatype 		xsd:decimal ;
+        sh:minInclusive 	0 ;
+        sh:maxInclusive 	10 ;
+		sh:message			"ls-voc:happiness-cantril-ladder must be xsd:decimal value from interval <0, 10>."@en ;
+		sh:description		"Life happiness result value validation."@en
     ] ;
 	sh:property [
-		sh:path voc:refYear ;
-        sh:datatype xsd:gYear ;
-        sh:minLength 4 ;
-        sh:maxLength 4 ;
-        sh:pattern "^20" ;
+		sh:path				voc:refYear ;
+        sh:datatype			xsd:gYear ;
+        sh:minLength		4 ;
+        sh:maxLength		4 ;
+        sh:pattern			"^20" ;
+		sh:message			"ls-voc:happiness-cantril-ladder must be of xsd:gYear type, has lenght of 4 and start with 20."@en ;
+		sh:description		"Observation year validation."@en
     ] .

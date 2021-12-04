@@ -24,24 +24,32 @@
 :kpnShape a sh:PropertyShape ;
 	sh:targetObjectsOf ccz-voc:kumulativni-pocet-nakazenych ;
 	sh:datatype xsd:integer ;
-	sh:minInclusive 0 .
+	sh:minInclusive 0 ;
+	sh:message "ccz-voc:kumulativni-pocet-nakazenych musí být nezáporné celé číslo."@cs ;
+	sh:description "Validace nezáporného množství kumulativních nakažených." .
 
 
 :kpvShape a sh:PropertyShape ;
 	sh:targetObjectsOf ccz-voc:kumulativni-pocet-vylecenych ;
 	sh:datatype xsd:integer ;
-	sh:minInclusive 0 .
+	sh:minInclusive 0 ;
+	sh:message "ccz-voc:kumulativni-pocet-vylecenych musí být nezáporné celé číslo."@cs ;
+	sh:description "Validace nezáporného množství kumulativních vyléčených." .
 
 
 :kpuShape a sh:PropertyShape ;
 	sh:targetObjectsOf ccz-voc:kumulativni-pocet-umrti ;
 	sh:datatype xsd:integer ;
-	sh:minInclusive 0 .
+	sh:minInclusive 0 ;
+	sh:message "ccz-voc:kumulativni-pocet-umrti musí být nezáporné celé číslo."@cs ;
+	sh:description "Validace nezáporného množství kumulativních úmrtí." .
 
 
 :refDateShape a sh:PropertyShape ;
 	sh:targetObjectsOf voc:refDate ;
-	sh:datatype xsd:date .
+	sh:datatype xsd:date ;
+	sh:message "voc:refDate musí být datového typu xsd:date."@cs ;
+	sh:description "Validace typu data." .
 
 
 :refOkresShape a sh:NodeShape ;
@@ -66,27 +74,41 @@
 		sh:nodeKind sh:IRI ;
         sh:minCount 1 ;
 		sh:maxCount 1 ;
+        sh:message "Pozorování musí mít právě jednu položku voc:refOkres typu IRI."@cs ;
+        sh:description "Validace typu a kardinality okresu pozorování"@cs
+    ] ;
+	sh:property [
+    	sh:path voc:refOkres ;
         sh:node :refOkresShape ;
-        sh:message "TEST"@en
+        sh:message "Neplatný shape položky voc:refOkres."@cs ;
+        sh:description "Validace shapu okresu pozorování."@cs
     ] ;
 	sh:property [
     	sh:path voc:refDate ;
     	sh:minCount 1 ;
-		sh:maxCount 1
+		sh:maxCount 1 ;
+        sh:message "Pozorování musí mít právě jednu položku voc:refDate."@cs ;
+        sh:description "Validace kardinality data pozorování."@cs
     ] ;
 	sh:property [
     	sh:path ccz-voc:kumulativni-pocet-nakazenych ;
         sh:minCount 1 ;
-		sh:maxCount 1
+		sh:maxCount 1 ;
+        sh:message "Pozorování musí mít právě jednu hodnotu ccz-voc:kumulativni-pocet-nakazenych."@cs ;
+        sh:description "Validace kardinality kumulativního počtu nakažených."@cs
     ] ;
 	sh:property [
 		sh:path ccz-voc:kumulativni-pocet-vylecenych ;
         sh:minCount 1 ;
-		sh:maxCount 1
+		sh:maxCount 1 ;
+        sh:message "Pozorování musí mít právě jednu hodnotu ccz-voc:kumulativni-pocet-vylecenych."@cs ;
+        sh:description "Validace kardinality kumulativního počtu vyléčených."@cs
     ] ;
 	sh:property [
 		sh:path ccz-voc:kumulativni-pocet-umrti ;
         sh:minCount 1 ;
-		sh:maxCount 1
+		sh:maxCount 1 ;
+        sh:message "Pozorování musí mít právě jednu hodnotu ccz-voc:kumulativni-pocet-umrti."@cs ;
+        sh:description "Validace kardinality kumulativního počtu úmrtí."@cs
     ] .
 
