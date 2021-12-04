@@ -1,4 +1,92 @@
 # Usage:
-#	TODO: property pair constraint
-#	TODO: shape-based constraint
-#	TODO: various shape severities
+#	a node shape and a property shape
+#   a node shape using a property shape
+#   value type constraint
+#   cardinality constraint
+#   value range constraint
+#	shape-based constraint
+
+
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
+
+
+@prefix voc: <http://www.example.org/vocabulary/> .
+@prefix ccz-voc: <http://www.example.org/covid-cze/vocabulary/> .
+
+
+@prefix : <http://www.example.org/shacl/covid-cze/> .
+
+
+:kpnShape a sh:PropertyShape ;
+	sh:targetObjectsOf ccz-voc:kumulativni-pocet-nakazenych ;
+	sh:datatype xsd:integer ;
+	sh:minInclusive 0 .
+
+
+:kpvShape a sh:PropertyShape ;
+	sh:targetObjectsOf ccz-voc:kumulativni-pocet-vylecenych ;
+	sh:datatype xsd:integer ;
+	sh:minInclusive 0 .
+
+
+:kpuShape a sh:PropertyShape ;
+	sh:targetObjectsOf ccz-voc:kumulativni-pocet-umrti ;
+	sh:datatype xsd:integer ;
+	sh:minInclusive 0 .
+
+
+:refDateShape a sh:PropertyShape ;
+	sh:targetObjectsOf voc:refDate ;
+	sh:datatype xsd:date .
+
+
+:refOkresShape a sh:NodeShape ;
+	sh:property [
+    	sh:path dbp:nuts ;
+        sh:datatype xsd:string ;
+    ] ;
+	sh:property [
+    	sh:path skos:broader ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+	sh:property [
+    	sh:path skos:inScheme ;
+        sh:nodeKind sh:IRI ;
+    ] .
+
+
+:observationShape a sh:NodeShape ;
+	sh:targetClass qb:Observation ;
+	sh:property [
+    	sh:path voc:refOkres ;
+		sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+		sh:maxCount 1 ;
+        sh:node :refOkresShape ;
+        sh:message "TEST"@en
+    ] ;
+	sh:property [
+    	sh:path voc:refDate ;
+    	sh:minCount 1 ;
+		sh:maxCount 1
+    ] ;
+	sh:property [
+    	sh:path ccz-voc:kumulativni-pocet-nakazenych ;
+        sh:minCount 1 ;
+		sh:maxCount 1
+    ] ;
+	sh:property [
+		sh:path ccz-voc:kumulativni-pocet-vylecenych ;
+        sh:minCount 1 ;
+		sh:maxCount 1
+    ] ;
+	sh:property [
+		sh:path ccz-voc:kumulativni-pocet-umrti ;
+        sh:minCount 1 ;
+		sh:maxCount 1
+    ] .
+

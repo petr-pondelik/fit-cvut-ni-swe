@@ -6,6 +6,8 @@
 #   value range constraint
 #   string-based constraint
 #   logical constraint
+#	property pair constraint
+#	various shape severities
 
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -21,33 +23,49 @@
 @prefix : <http://www.example.org/shacl/life-satisfaction/> .
 
 
-:label-shape a sh:NodeShape ;
+:iso3166codeDataTypeShape a sh:PropertyShape ;
+	sh:targetObjectsOf	dbp:iso3166code ;
+	sh:datatype			xsd:string ;
+	sh:message			"iso3166code has to be string."@en .
+
+:iso3166codeFormatShape a sh:PropertyShape ;
+	sh:targetObjectsOf	dbp:iso3166code ;
+	sh:pattern "^([A-z]{3}|OWID_[A-z]{3})$" ;
+    sh:flags "i" ;
+	sh:severity sh:Warning .
+
+
+:labelShape a sh:NodeShape ;
 	sh:path				rdfs:label ;
 	sh:languageIn		( "en" ) ;
 	sh:minCount 		1 ;
 	sh:maxCount 		1 ;
-	sh:message 			"English label required."@en .
+	sh:message 			"Exactly one english label required."@en .
 
-:pref-label-shape a sh:NodeShape ;
+
+:prefLabelShape a sh:NodeShape ;
 	sh:path				skos:prefLabel ;
 	sh:languageIn		( "en" ) ;
 	sh:minCount			1 ;
 	sh:maxCount 		1 ;
-	sh:message			"English prefLabel required."@en .
-
-:iso3166code-shape a sh:PropertyShape ;
-	sh:path				dbp:iso3166code ;
-	sh:datatype			xsd:string ;
-	sh:description		"iso3166code has to be string."@en .
+	sh:message			"Exactly one english prefLabel required."@en .
 
 
 :concept-shape a sh:NodeShape ;
 	sh:targetClass		skos:Concept ;
-	sh:or (
-      :label-shape
-      :pref-label-shape
-    ) ;
-	sh:message			"English label or prefLabel required."@en .
+	sh:property [
+		sh:or (
+      		:labelShape
+      		:prefLabelShape
+    	) ;
+		sh:message "English label or prefLabel required."@en ;
+    ] ;
+	sh:property [
+    	sh:path rdfs:label ;
+        sh:equals dbp:name ;
+        sh:message "Name should be same as label." ;
+        sh:severity sh:Info
+    ] .
 
 
 :ref-country-shape a sh:NodeShape ;

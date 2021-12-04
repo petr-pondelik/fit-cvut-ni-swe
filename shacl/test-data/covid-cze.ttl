@@ -1,10 +1,23 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix qb:  <http://purl.org/linked-data/cube#> .
+@prefix dbp:  <http://dbpedia.org/property/> .
 
 @prefix voc: <http://www.example.org/vocabulary/> .
 @prefix ccz-voc: <http://www.example.org/covid-cze/vocabulary/> .
+@prefix ccz-kraje: <http://www.example.org/covid-cze/kraje/> .
 @prefix ccz-okresy: <http://www.example.org/covid-cze/okresy/> .
 
+
+<http://www.example.org/covid-cze/kraje/CZ020> a skos:Concept ;
+	dbp:nuts		    "CZ020" ;
+	skos:topConceptOf   ccz-voc:regiony .
+
+<http://www.example.org/covid-cze/okresy/CZ0201> a skos:Concept ;
+	dbp:nuts		"CZ0201" ;
+	skos:broader	ccz-kraje:CZ020 ;
+	skos:inScheme   ccz-voc:regiony .
 
 <http://www.example.org/covid-cze/okresy/CZ0201/2020-12-10> a qb:Observation ;
 	qb:dataSet 								    ccz-voc:dataset ;
