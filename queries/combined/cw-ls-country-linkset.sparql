@@ -1,4 +1,4 @@
-# Select EU countries that had less positive cases on 1.1.2020 then the country with the highest life satisfaction for 2019
+# Select EU countries that had less positive cases on 1.1.2020 then the country with the highest life satisfaction for 2020
 # Datasets: covid-world, life-satisfaction
 # Linkset: cw-ls-country
 

@@ -20,7 +20,7 @@ WHERE {
 
         ?cwCountry <http://www.w3.org/2002/07/owl#sameAs> ?dbpCountry .
 
-      	  ?obs rdf:type qb:Observation ;
+      	?obs rdf:type qb:Observation ;
             voc:refCountry ?cwCountry ;
             voc:refDate "2021-01-01"^^xsd:date ;
             cw-voc:cumulative-deceased ?totalDec .
